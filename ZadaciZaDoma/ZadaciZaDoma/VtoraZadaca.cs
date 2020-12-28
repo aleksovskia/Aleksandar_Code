@@ -28,7 +28,7 @@ namespace ZadaciZaDoma
                 //var product = new Product() { Name = "Smoki", Price = 10 };
                 //shoppingCart.AddArticle(product);
                 shoppingCart.AddArticle("Smoki", 15);
-                shoppingCart.AddArticle("coca cola", 40);
+                shoppingCart.AddArticle("coca cola", 30);
                 shoppingCart.AddArticle("Aleksandria kuve", 400);
             }
 
