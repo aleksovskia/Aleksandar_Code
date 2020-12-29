@@ -17,14 +17,13 @@ namespace ZadaciZaDoma
             Console.WriteLine("Aleksandria kuve 400 den ");
             var brojNaProizvodi3 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Vkupno denari");
-
+            
             var shoppingCart = new ShoppingCart();
 
+                
             //for loop za vnes na proizvodi
                 
             {
-
-
 
                 //var product = new Product() { Name = "Smoki", Price = 10 };
                 //shoppingCart.AddArticle(product);

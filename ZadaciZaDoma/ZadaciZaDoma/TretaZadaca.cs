@@ -38,10 +38,6 @@ namespace ZadaciZaDoma
             Step = 180;
             Minu = 0;
             Sek = 60;
-
-
-
-
         }
         public Agol(int step, int minu, int sek)
         {
@@ -49,12 +45,5 @@ namespace ZadaciZaDoma
             Minu = minu;
             Sek = sek;
         }
-
-
-
-
-
-
     }
-
 }
