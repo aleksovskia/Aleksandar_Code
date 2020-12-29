@@ -17,11 +17,11 @@ namespace ZadaciZaDoma
 
 
             if (step >= 0 && step <= 360)
-                if (minu >= 0 && minu <= 60)
-                    if (sek >= 0 && sek < 60)
-                        Console.WriteLine("Agol");
-                    else
-                        Console.WriteLine("Nevalidni vrednosti za agol");
+            if (minu >= 0 && minu <= 60)
+            if (sek >= 0 && sek < 60)
+            Console.WriteLine("Agol");
+            else
+            Console.WriteLine("Nevalidni vrednosti za agol");
 
         }
 

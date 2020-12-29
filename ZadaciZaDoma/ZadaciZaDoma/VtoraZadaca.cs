@@ -21,8 +21,9 @@ namespace ZadaciZaDoma
             var shoppingCart = new ShoppingCart();
 
             //for loop za vnes na proizvodi
-
+                
             {
+
 
 
                 //var product = new Product() { Name = "Smoki", Price = 10 };
@@ -40,7 +41,7 @@ namespace ZadaciZaDoma
     {
         public List<ProductQuantity> products { get; set; } = new List<ProductQuantity>();
 
-        public void AddArticle(string name, int price, int quantity = 1)
+        public void AddArticle(string name, int price, int quantity = 1 )
         {
             var product = new Product() { Name = name, Price = price };
             products.Add(new ProductQuantity() { Product = product, Quantity = quantity });
