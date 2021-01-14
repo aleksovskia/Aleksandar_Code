@@ -24,7 +24,7 @@ namespace ZadaciZaDoma.Ureduvanje_Dom
         }
         public void Pecati()
         {
-            Console.WriteLine($"- Masa : {Dolzina} {Sirina}  ");
+            Console.WriteLine($"- Masa : {Dolzina} / {Sirina}  ");
 
         }
 

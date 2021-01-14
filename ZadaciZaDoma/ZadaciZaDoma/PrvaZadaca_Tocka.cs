@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ZadaciZaDoma
 {
-    public class PrvaZadaca
+    public class PrvaZadaca_Tocka
     {
         public void RunPrvaZadaca()
         {

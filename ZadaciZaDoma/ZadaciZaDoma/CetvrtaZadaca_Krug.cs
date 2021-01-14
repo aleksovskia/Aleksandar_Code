@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ZadaciZaDoma
 {
-    class CetvrtaZadaca
+    class CetvrtaZadaca_Krug
     {
         public void RunCetvrtaZadaca()
         {

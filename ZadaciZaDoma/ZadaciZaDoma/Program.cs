@@ -18,6 +18,7 @@ namespace ZadaciZaDoma
                 Console.WriteLine("3. Agol ");
                 Console.WriteLine("4. krug ");
                 Console.WriteLine("5. Ureduvanje na Dom " );
+                Console.WriteLine("6. Employee " );
                 Console.WriteLine();
 
                 var vnes = Console.ReadLine();
@@ -26,19 +27,22 @@ namespace ZadaciZaDoma
                 switch (vnes)
                 {
                     case "1":
-                        new PrvaZadaca().RunPrvaZadaca();
+                        new PrvaZadaca_Tocka().RunPrvaZadaca();
                         break;
                     case "2":
-                        new VtoraZadaca().RunVtoraZadaca();
+                        new VtoraZadaca_Kupuvacka_Kosnicka().RunVtoraZadaca();
                         break;
                     case "3":
-                        new TretaZadaca().RunTretaZadaca();
+                        new TretaZadaca_Agol().RunTretaZadaca();
                         break;
                     case "4":
-                        new CetvrtaZadaca().RunCetvrtaZadaca();
+                        new CetvrtaZadaca_Krug().RunCetvrtaZadaca();
                         break;
                     case "5":
-                        new PetaZadaca().RunPetaZadaca();
+                        new PetaZadaca_Ureduvanje_Dom().RunPetaZadaca();
+                        break;
+                    case "6":
+                        new SestaZadaca_Employee().RunSestaZadaca();
                         break;
 
 

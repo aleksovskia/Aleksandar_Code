@@ -23,7 +23,7 @@ namespace ZadaciZaDoma.Ureduvanje_Dom
         }
         public void Pecati()
         {
-            Console.Write($"- Soba : {Dolzina} {Sirina} ");
+            Console.Write($"- Soba : {Dolzina} / {Sirina} ");
             Masa.Pecati();
         }
     }

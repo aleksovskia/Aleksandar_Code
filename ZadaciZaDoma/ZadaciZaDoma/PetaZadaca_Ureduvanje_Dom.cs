@@ -4,7 +4,7 @@ using ZadaciZaDoma.Ureduvanje_Dom;
 
 namespace ZadaciZaDoma
 {
-    public class PetaZadaca 
+    public class PetaZadaca_Ureduvanje_Dom 
 
     {
         public void RunPetaZadaca()

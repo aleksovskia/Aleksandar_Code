@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ZadaciZaDoma
 {
-    public class VtoraZadaca
+    public class VtoraZadaca_Kupuvacka_Kosnicka
     {
         public void RunVtoraZadaca()
         {

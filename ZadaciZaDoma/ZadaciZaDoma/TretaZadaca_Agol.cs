@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ZadaciZaDoma
 {
-    public class TretaZadaca
+    public class TretaZadaca_Agol
     {
         public void RunTretaZadaca()
         {
