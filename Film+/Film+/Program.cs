@@ -16,7 +16,7 @@ namespace Film_
                 Console.WriteLine();
                 Console.WriteLine($"------- Movie {i + 1} -------");
                 Console.WriteLine();
-                Console.WriteLine("ime na Filmot : ");
+                Console.WriteLine("Ime na Filmot : ");
                 string ime = Console.ReadLine();
                 Console.WriteLine("Reziser na Filmot : ");
                 string reziser = Console.ReadLine();

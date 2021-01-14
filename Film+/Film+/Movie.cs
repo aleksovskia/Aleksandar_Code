@@ -10,7 +10,6 @@ namespace Film_
         private string Reziser { get; set; }
         private string Zarn { get; set; }
         public int Godina { get; set; }
-
         public Movie()
         {
 
@@ -31,6 +30,5 @@ namespace Film_
             Console.WriteLine($" - Godina  : {Godina} ");
             Console.WriteLine();
         }
- 
     }
 }
