@@ -13,7 +13,7 @@ namespace Nedviznina
                 nedviznini1.Luksuz = 0;
                 nedviznini1.Pecati();
                 nedviznini1.DanokNaImot();
-                //nedviznini1.DanokNaImotLuksuz();
+              //nedviznini1.DanokNaImotLuksuz();
             }
             Console.WriteLine();
             var nedviznini2 = new Vila();
@@ -21,8 +21,8 @@ namespace Nedviznina
                 nedviznini2.Nedviznini = new Nedviznina("Vila na Vodno", 110, 1120);
                 nedviznini2.Luksuz = 10;
                 nedviznini2.Pecati();
-               // nedviznini2.DanokNaImot();
-                nedviznini2.DanokNaImotLuksuz();
+                nedviznini2.DanokNaImot();
+              //nedviznini2.DanokNaImotLuksuz();
             }
         }
         public class Nedviznina
@@ -60,7 +60,7 @@ namespace Nedviznina
             public Vila()
             {
                 Nedviznini = new Nedviznina();
-                Luksuz = 10;
+                Luksuz = 0;
             }
             public Vila(Nedviznina nedviznini, int luksuz)
             {
@@ -73,14 +73,17 @@ namespace Nedviznina
             }
             public void DanokNaImot()
             {
-                Console.WriteLine($"Danok za {Nedviznini.Adresa} e : {Nedviznini.DanokNaImot()}");
-                Nedviznini.DanokNaImot();
-            }
-            public void DanokNaImotLuksuz()
-            {
                 Console.WriteLine($"Danok na Luksuz : {Luksuz}");
-                Console.WriteLine($"Danok za {Nedviznini.Adresa} e : {Nedviznini.DanokNaImot() + ((Nedviznini.Kvadratura * Nedviznini.CenaNaKvadrat) / 100 * Luksuz)}");
+                Console.WriteLine($"Danok za {Nedviznini.Adresa} e : {(Nedviznini.DanokNaImot() + ((Nedviznini.Kvadratura * Nedviznini.CenaNaKvadrat) / 100) * Luksuz)}");
+               
+                // Console.WriteLine($"Danok za {Nedviznini.Adresa} e : {Nedviznini.DanokNaImot()}");
+                // Nedviznini.DanokNaImot();
             }
+           // public void DanokNaImotLuksuz()
+           // {
+           //     Console.WriteLine($"Danok na Luksuz : {Luksuz}");
+           //     Console.WriteLine($"Danok za {Nedviznini.Adresa} e : {(Nedviznini.DanokNaImot() + ((Nedviznini.Kvadratura * Nedviznini.CenaNaKvadrat) / 100) * Luksuz)}");
+           // }
         }
     }   
 }
