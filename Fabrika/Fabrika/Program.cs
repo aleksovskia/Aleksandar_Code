@@ -21,7 +21,7 @@ namespace Fabrika
                 Console.WriteLine("Prezime na vraboteniot  : ");
                 string prezime = Console.ReadLine();
                 Console.WriteLine("Plata na vraboteniot : ");
-                int plata = int.Parse(Console.ReadLine());
+                int plata = Convert.ToInt32(Console.ReadLine());
                 ListaNaVraboteni.Add(new Rabotnik(ime, prezime, plata));
             }
             Console.WriteLine();
@@ -38,7 +38,9 @@ namespace Fabrika
                 Console.WriteLine();
             }
         }
-        public static void PecatiSoPlata(List<Rabotnik> fabrika, int ProsecnaPlata)
+        public static void 
+            
+            PecatiSoPlata(List<Rabotnik> fabrika, int ProsecnaPlata)
         {
             Console.WriteLine();
             Console.WriteLine("Vraboteni so plata povekje od 30000 denari : ");

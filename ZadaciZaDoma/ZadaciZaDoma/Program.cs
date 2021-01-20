@@ -30,7 +30,7 @@ namespace ZadaciZaDoma
                         new PrvaZadaca_Tocka().RunPrvaZadaca();
                         break;
                     case "2":
-                        new VtoraZadaca_Kupuvacka_Kosnicka().RunVtoraZadaca();
+                        new  VtoraZadaca_Kupuvacka_Kosnicka().RunVtoraZadaca();
                         break;
                     case "3":
                         new TretaZadaca_Agol().RunTretaZadaca();
@@ -41,9 +41,7 @@ namespace ZadaciZaDoma
                     case "5":
                         new PetaZadaca_Ureduvanje_Dom().RunPetaZadaca();
                         break;
-                    case "6":
-                        new SestaZadaca_Employee().RunSestaZadaca();
-                        break;
+                  
 
 
                     default:

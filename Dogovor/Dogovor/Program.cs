@@ -8,26 +8,24 @@ namespace Dogovor
         static void Main(string[] args)
         {
             var n = Convert.ToInt32(Console.ReadLine());
-            
+            var podpisuvaci = new List<Dogovor>();
+
             for (int i = 0; i < n; i++)
             {
                 var input = Console.ReadLine();
-                var podpisuvaci = input.Split(" ");
+                var podpisuvac = input.Split(" ");
 
-      
-
-               var ime = podpisuvaci[0];
-               var prezime = podpisuvaci[1];
-               var embg = Convert.ToInt32(podpisuvaci[2]);
-                
-
-            
-
+                var ime = podpisuvaci[0];
+                var prezime = podpisuvaci[1];
+                var embg = Convert.ToInt32(podpisuvaci[2]);
 
             }
-        
+       
+            Console.WriteLine();
             
         }
+       
+
     }
     public class Potpisuvac
     {
@@ -45,22 +43,10 @@ namespace Dogovor
             Prezime = prezime;
             EMBG = embg;
         }
-        public void Podpisuvaci()
+        public void PodpisuvacPrint()
         {
-            for (int i = EMBG; i == EMBG; i++)
-            {
-                if (EMBG == EMBG)
-                {
-                    Console.WriteLine($"Postojat Potpisuvaci so ist embg {EMBG}");
-                }
-                else
-                {
 
-                }
-            }
-           
-
-                 
+         
         }
 
     }
@@ -68,20 +54,15 @@ namespace Dogovor
     {
 
         int brojNaDogovot { get; set; }
+        string Osiguruvanje { get; set; }
+
         public Dogovor()
         {
-              
-
+            
         }
-
-
-
-
-        public void Podpisuvaci()
+        public void PodpisuvacDogovor()
         {
-            Console.WriteLine($"Dogovor 1 : ");
-              
-
+            Console.WriteLine($"Osiguruvane 1 : ");
         }
     }     
     
