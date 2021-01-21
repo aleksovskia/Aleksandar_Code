@@ -46,7 +46,7 @@ namespace Nedviznina
             }
             public void Pecati()
             {
-                Console.WriteLine($"{Adresa}, Kvadratura : {Kvadratura}, Cena po kvadrat : {CenaNaKvadrat}");
+                Console.WriteLine($"{Adresa}, Kvadratura : {Kvadratura} m2, Cena po kvadrat : {CenaNaKvadrat} euro");
             }
             public double  DanokNaImot()
             {
@@ -73,8 +73,8 @@ namespace Nedviznina
             }
             public void DanokNaImot()
             {
-                Console.WriteLine($"Danok na Luksuz : {Luksuz}");
-                Console.WriteLine($"Danok za {Nedviznini.Adresa} e : {(Nedviznini.DanokNaImot() + ((Nedviznini.Kvadratura * Nedviznini.CenaNaKvadrat) / 100) * Luksuz)}");
+                Console.WriteLine($"Danok na Luksuz : {Luksuz} %");
+                Console.WriteLine($"Danok za {Nedviznini.Adresa} e : {(Nedviznini.DanokNaImot() + ((Nedviznini.Kvadratura * Nedviznini.CenaNaKvadrat) / 100) * Luksuz)} euro");
                
                 // Console.WriteLine($"Danok za {Nedviznini.Adresa} e : {Nedviznini.DanokNaImot()}");
                 // Nedviznini.DanokNaImot();
