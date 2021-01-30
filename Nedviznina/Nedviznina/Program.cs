@@ -50,13 +50,13 @@ namespace Nedviznina
             }
             public double  DanokNaImot()
             {
-                return (Kvadratura * CenaNaKvadrat) / 100 * 5;  
+                return ((Kvadratura * CenaNaKvadrat) / 100) * 5;  
             }
         }
         public class Vila
         {
             public Nedviznina Nedviznini;
-            public int Luksuz { get; set; }
+            public int Luksuz { get; set; } 
             public Vila()
             {
                 Nedviznini = new Nedviznina();
@@ -74,8 +74,7 @@ namespace Nedviznina
             public void DanokNaImot()
             {
                 Console.WriteLine($"Danok na Luksuz : {Luksuz} %");
-                Console.WriteLine($"Danok za {Nedviznini.Adresa} e : {(Nedviznini.DanokNaImot() + ((Nedviznini.Kvadratura * Nedviznini.CenaNaKvadrat) / 100) * Luksuz)} euro");
-               
+                Console.WriteLine($"Danok za {Nedviznini.Adresa} e : {(Nedviznini.DanokNaImot() + ((Nedviznini.Kvadratura * Nedviznini.CenaNaKvadrat) / 100) * Luksuz)} euro");     
                 // Console.WriteLine($"Danok za {Nedviznini.Adresa} e : {Nedviznini.DanokNaImot()}");
                 // Nedviznini.DanokNaImot();
             }

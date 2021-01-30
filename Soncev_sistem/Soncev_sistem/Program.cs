@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Soncev_sistem
 {
@@ -7,82 +8,62 @@ namespace Soncev_sistem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("----- Site Planeti : ");
-            Console.WriteLine();
-            var planeta = new SoncevSistem();
+            var merkur = new Planeta()
             {
-                planeta.NajbliskaPlaneta = new Planeta("Merkur", 4879, 57909227, 0.0553f);
-                planeta.Planeti = "Site Planeti 1 ";
-                planeta.BrojPlaneti = 1;
-                planeta.PecatiPlaneti();
+                Ime = "Merkur",
+                Dijametar = 4879,
+                Oddalecenost = 57909227,
+                Masa = 0.0553f
+            };
+            var venera = new Planeta()
+            {
+                Ime = "Veneta",
+                Dijametar = 12104,
+                Oddalecenost = 108209475,
+                Masa = 0.815f
+            };
+            var zemja = new Planeta()
+            {
+                Ime = "Zemja",
+                Dijametar = 12742,
+                Oddalecenost = 149598262,
+                Masa = 1f
+            };
+            var mars = new Planeta()
+            {
+                Ime = "Mars",
+                Dijametar = 6779,
+                Oddalecenost = 227943824,
+                Masa = 0.11f
+            };
+            var jupiter = new Planeta()
+            {
+                Ime = "Jupiter",
+                Dijametar = 139822,
+                Oddalecenost = 778340821,
+                Masa = 317.8f
+            };
+            var saturn = new Planeta()
+            {
+                Ime = "Saturn",
+                Dijametar = 116464,
+                Oddalecenost = 1426666422,
+                Masa = 95.2f
+            };
 
-            }
-            var planeta1 = new SoncevSistem();
-            {
-                planeta1.NajbliskaPlaneta = new Planeta("Venera", 12104, 108209475, 0.815f);
-                planeta1.Planeti = "Site Planeti 2 ";
-                planeta1.BrojPlaneti = 2;
-                planeta1.PecatiPlaneti();
+            var listaOdPlaneti = new List<Planeta>() { merkur, venera, zemja, mars, jupiter, saturn };
+            var SortiranaListaOdPlaneti = listaOdPlaneti.OrderBy(x => x.Oddalecenost).ToList();
 
-            }
-            var planeta2 = new SoncevSistem();
+            var soncev_sistem = new SoncevSistem()
             {
-                planeta2.NajbliskaPlaneta = new Planeta("Zemja", 12742, 149598262, 1f);
-                planeta2.Planeti = "Site Planeti 3 ";
-                planeta2.BrojPlaneti = 3;
-                planeta2.PecatiPlaneti();
-            }
-            var planeta3 = new SoncevSistem();
-            {
-                planeta3.NajbliskaPlaneta = new Planeta("Mars", 6779, 227943824, 0.11f);
-                planeta3.Planeti = "Site Planeti 4 ";
-                planeta3.BrojPlaneti = 4;
-                planeta3.PecatiPlaneti();
-            }
-            var planeta4 = new SoncevSistem();
-            {
-                planeta4.NajbliskaPlaneta = new Planeta("Jupiter", 139822, 778340821, 317.8f);
-                planeta4.Planeti = "Site Planeti 5 ";
-                planeta4.BrojPlaneti = 5;
-                planeta4.PecatiPlaneti();
-            }
-            var planeta5 = new SoncevSistem();
-            {
-                planeta5.NajbliskaPlaneta = new Planeta("Saturn", 116464, 1426666422, 95.2f);
-                planeta5.Planeti = "Site Planeti 6 ";
-                planeta5.BrojPlaneti = 6;
-                planeta5.PecatiPlaneti();
-            }
-            var listaNaPlaneti = new List<SoncevSistem>() { planeta, planeta1, planeta2, planeta3, planeta4, planeta5 };
-            NajbliskaPlaneta1(listaNaPlaneti, 100000000); // Najbliska planeta ---------------------------
+                Planeti = listaOdPlaneti,
+               NajbliskaPlaneta = SortiranaListaOdPlaneti[0]
+            };
 
-            var pogolemaMasa = new List<SoncevSistem>() { planeta , planeta1, planeta2, planeta3, planeta4, planeta5 };
-            ListaMasa(pogolemaMasa, 1);
-        }
-        public static void NajbliskaPlaneta1(List<SoncevSistem> planeti, int oddalecenost)
-        {
+            soncev_sistem.PecatiPlaneti();
             Console.WriteLine();
-            Console.Write("----- Najbliska Planeta e : ");
-            for (int i = 0; i < planeti.Count; i++)
-            {
-                if (planeti[i].NajbliskaPlaneta.Oddalecenost < oddalecenost)
-                {
-                    Console.WriteLine();
-                    planeti[i].PecatiPlaneti();
-                }
-            }
-        }
-        public static void ListaMasa(List<SoncevSistem> planeti, float masa)
-        {
-            Console.WriteLine();
-            Console.WriteLine("----- Planeti so pogolema masa od 1kg : ");
-            for (int i = 0; i < planeti.Count; i++)
-            {
-                if (planeti[i].NajbliskaPlaneta.Masa > masa)
-                {
-                    planeti[i].PecatiSoMasa();
-                }
-            }
+            Console.WriteLine("Pecati so masa pogolena od 1 kg :");
+            soncev_sistem.PecatiSoMasa(1f);
         }
     }
     public class Planeta
@@ -102,10 +83,6 @@ namespace Soncev_sistem
             Oddalecenost = oddalecenost;
             Masa = masa;
         }
-        public void Copy()
-        {
-
-        }
         public void Pecati()
         {
             Console.WriteLine($"{Ime} so dijametar {Dijametar} km.");
@@ -113,36 +90,36 @@ namespace Soncev_sistem
     }
     public class SoncevSistem
     {
-        public Planeta NajbliskaPlaneta;
-        public string Planeti { get; set; }
-        public int BrojPlaneti { get; set; }
-
+        public Planeta NajbliskaPlaneta { get; set; }
+        public List<Planeta> Planeti { get; set; }
         public SoncevSistem()
         {
-            NajbliskaPlaneta = new Planeta();
-            Planeti = " ";
-            BrojPlaneti = 0;
-        }
-        public SoncevSistem(Planeta najbliskaPlaneta, string planeti, int brojplaneti)
-        {
-            NajbliskaPlaneta = najbliskaPlaneta;
-            Planeti = planeti;
-            BrojPlaneti = brojplaneti;
 
         }
-        public SoncevSistem(string planeti, int brojPlaneti)
+        public SoncevSistem(Planeta planeta, List<Planeta> listaNaPlaneti)
         {
-            Planeti = planeti;
-            BrojPlaneti = brojPlaneti;
+            NajbliskaPlaneta = planeta;
+            Planeti = listaNaPlaneti;
         }
         public void PecatiPlaneti()
         {
-            NajbliskaPlaneta.Pecati();
-
+            foreach (var planeta in Planeti)
+            {
+                planeta.Pecati();
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Najbliska planeta e : {NajbliskaPlaneta.Ime} so dijametar {NajbliskaPlaneta.Dijametar} km. ");
         }
-        public void PecatiSoMasa()
+        public void PecatiSoMasa(float masa)
         {
-            NajbliskaPlaneta.Pecati();
+            foreach (var planeta in Planeti) 
+            {
+                if (planeta.Masa > masa)
+                {
+                    planeta.Pecati();
+                }
+            }    
         }
     }
 }
+    

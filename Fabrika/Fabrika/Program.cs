@@ -22,6 +22,7 @@ namespace Fabrika
                 string prezime = Console.ReadLine();
                 Console.WriteLine("Plata na vraboteniot : ");
                 int plata = Convert.ToInt32(Console.ReadLine());
+               
                 ListaNaVraboteni.Add(new Rabotnik(ime, prezime, plata));
             }
             Console.WriteLine();
