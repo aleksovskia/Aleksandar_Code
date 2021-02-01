@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FootballTeam_Ispit_Zadaca
+namespace FoodballTeam_Ispit_Zadaca
 {
     class Program
     {
@@ -27,6 +27,10 @@ namespace FootballTeam_Ispit_Zadaca
             var ListaNaTimovi = new List<FootbaalTeam>() {team1,team2,team3,team4,team5,team6,team7};
             Console.WriteLine("Najgolemo dostignuvanje");
             var greatestAchieevement = ListaNaTimovi.OrderByDescending(x => x.Dostignuvanje).ToList();
+
+            //var NajgolemoDostignuvanje = new FootbaalTeam();
+           
+
             foreach (var timovi in greatestAchieevement)
             {
                 Console.WriteLine();
@@ -36,6 +40,7 @@ namespace FootballTeam_Ispit_Zadaca
             count.ListaNaTimovi = new List<FootbaalTeam>() { team1, team2, team3, team4, team5, team6, team7 };
             Console.WriteLine();
             count.ListaTimovi();
+           
         }
     }
     public  class FootbaalTeam
