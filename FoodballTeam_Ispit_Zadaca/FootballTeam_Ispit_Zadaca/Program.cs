@@ -31,7 +31,7 @@ namespace FootballTeam_Ispit_Zadaca
                 timovi.Pecati();
             }
             Console.WriteLine();
-            Console.WriteLine(" Najgolemo dostignuvanje");
+            Console.WriteLine(" Najgolemo dostignuvanje :");
             var greatestAchieevement = ListaNaTimovi.OrderByDescending(x => x.Dostignuvanje).First();
             greatestAchieevement.Pecati();
             FootbaalTeam count = new FootbaalTeam();
