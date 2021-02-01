@@ -34,14 +34,13 @@ namespace Fabrika
             Console.WriteLine("Site Vraboteni : ");
             foreach (var informacii in ListaNaVraboteni)
             {
-                
                 informacii.PecatiVraboteni();
                 Console.WriteLine();
             }
         }
-        public static void 
-            
-            PecatiSoPlata(List<Rabotnik> fabrika, int ProsecnaPlata)
+        public static void PecatiSoPlata(List<Rabotnik> fabrika, int ProsecnaPlata)
+
+
         {
             Console.WriteLine();
             Console.WriteLine("Vraboteni so plata povekje od 30000 denari : ");

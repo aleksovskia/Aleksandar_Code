@@ -16,8 +16,8 @@ namespace NbaPlayer
             var allStarPlayer1 = new AllStarPlayer(Player1, 2, 3, 4);
             var allStarPlayer2 = new AllStarPlayer(Player2, 5, 6, 7);
             var allStarPlayer3 = new AllStarPlayer(Player3, 2, 3, 4);
-            var allStarPlayer4 = new AllStarPlayer(Player1, 5, 3, 8);
-            var allStarPlayer5 = new AllStarPlayer(Player1, 1, 3, 4);
+            var allStarPlayer4 = new AllStarPlayer(Player4, 5, 3, 8);
+            var allStarPlayer5 = new AllStarPlayer(Player5, 1, 3, 4);
             //Player1.Pecati();
             //allStarPlayer1.Pecati();
             //llStarPlayer2.Pecati();
@@ -104,10 +104,11 @@ namespace NbaPlayer
         }
         public override double Reiting()
         {
-          //  NEDORESENA !!!
-          // koj go vrrakja prosekot od obicniot rejting na kosarkarot i rejtingot na All Start rejting .
-          // Console.WriteLine($"new reating {base.Reiting()} All Star Reiting : {AllStarReiting()}");
+            //  NEDORESENA !!!
+            // koj go vrrakja prosekot od obicniot rejting na kosarkarot i rejtingot na All Start rejting .
+             AllStarReiting();
             return base.Reiting();
+            
         }
         public override void Pecati()
         {

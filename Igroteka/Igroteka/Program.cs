@@ -10,7 +10,7 @@ namespace Igroteka
             var kuopce = new list<Igracka>();
         }
     }
-    public class Topka
+    public class Topka : Forma
     {
         public const double Pi = 3.14f;
         
@@ -71,7 +71,7 @@ namespace Igroteka
             return MasaKocka;
         }
     }
-    public class Forma
+    public class Forma :Igracka
     {
 
     }

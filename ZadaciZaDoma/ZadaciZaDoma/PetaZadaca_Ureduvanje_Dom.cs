@@ -10,6 +10,7 @@ namespace ZadaciZaDoma
         public void RunPetaZadaca()
        
         {
+            var masa =new Masa()
              
             var n = Convert.ToInt32(Console.ReadLine());
             var ListaNaKukji = new List<Kukja>();
