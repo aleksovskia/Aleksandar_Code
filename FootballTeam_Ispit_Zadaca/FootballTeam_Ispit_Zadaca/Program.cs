@@ -33,9 +33,9 @@ namespace FootballTeam_Ispit_Zadaca
                 timovi.Pecati();
             }
             FootbaalTeam count = new FootbaalTeam ();
-            count.ListaNaKlubovi = new List<FootbaalTeam>() { team1, team2, team3, team4, team5, team6, team7 };
+            count.ListaNaTimovi = new List<FootbaalTeam>() { team1, team2, team3, team4, team5, team6, team7 };
             Console.WriteLine();
-            count.Lista_Klubovi();
+            count.ListaTimovi();
         }
     }
     public  class FootbaalTeam
@@ -43,9 +43,9 @@ namespace FootballTeam_Ispit_Zadaca
         public string ImeTrener { get; set; }
         public string PrezimeTrener { get; set; }
         public List<int> Golovi { get; set; } // = new List<int>();
-        public List<FootbaalTeam> ListaNaKlubovi = new List<FootbaalTeam>();
+
+        public List<FootbaalTeam> ListaNaTimovi = new List<FootbaalTeam>();
         public double Dostignuvanje { get; set; }
-       //public double NovKoeficient { get; set; }
 
         public double Koeficient = 2.0;
         public FootbaalTeam()
@@ -58,7 +58,6 @@ namespace FootballTeam_Ispit_Zadaca
             PrezimeTrener = prezimeTrener;
             Golovi = golovi;
             Koeficient = koeficient;
-          
         }
         public int BrojNaGolovi()
         {
@@ -84,11 +83,11 @@ namespace FootballTeam_Ispit_Zadaca
         {
             Console.WriteLine($" Ime : {ImeTrener} Prezime : {PrezimeTrener} Golovi : {BrojNaGolovi()} ");
         }
-        public void Lista_Klubovi()
+        public void ListaTimovi()
         {
             var club = 0;
             var nacionalTeam = 0;
-            foreach (var klubovi in ListaNaKlubovi)
+            foreach (var klubovi in ListaNaTimovi)
             {
                 if (klubovi is Club)
                 {
@@ -98,7 +97,6 @@ namespace FootballTeam_Ispit_Zadaca
                 {
                     nacionalTeam++;
                 }
-
             }
             Console.WriteLine($"Club: {club}\nNacional Team: {nacionalTeam}");
         }   
