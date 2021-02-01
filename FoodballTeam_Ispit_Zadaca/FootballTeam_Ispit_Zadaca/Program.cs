@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FoodballTeam_Ispit_Zadaca
+namespace FootballTeam_Ispit_Zadaca
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var tim1 = new FootbaalTeam("Aleksandar", "Aleksovski", new List<int> { 7, 5, 5 },2.0);
+            var tim1 = new FootbaalTeam("Aleksandar", "Aleksovski", new List<int> { 7, 5, 5 }, 2.0);
             var tim2 = new FootbaalTeam("Viktor", "Nikolovski", new List<int> { 6, 4, 1 }, 2.0);
             var tim3 = new FootbaalTeam("Martin", "Martinovski", new List<int> { 5, 9, 3 }, 2.0);
             var tim4 = new FootbaalTeam("Nikola", "Petrovskii", new List<int> { 4, 7, 8 }, 2.0);
@@ -16,7 +16,7 @@ namespace FoodballTeam_Ispit_Zadaca
             var tim6 = new FootbaalTeam("Stole", "Stolevski", new List<int> { 2, 1, 8 }, 2.0);
             var tim7 = new FootbaalTeam("Ilija", "Mitrovski", new List<int> { 1, 2, 5 }, 2.0);
 
-            FootbaalTeam team1 = new Club (tim1,"Vardar" ,3);
+            FootbaalTeam team1 = new Club(tim1, "Vardar", 3);
             FootbaalTeam team2 = new Club(tim2, "vardar", 4);
             FootbaalTeam team3 = new Club(tim3, "vardar", 5);
             FootbaalTeam team4 = new Club(tim4, "vardar", 6);
@@ -24,26 +24,23 @@ namespace FoodballTeam_Ispit_Zadaca
             FootbaalTeam team6 = new NatoinalTeam(tim6, "Makedonija", 8);
             FootbaalTeam team7 = new NatoinalTeam(tim7, "Makedonija", 9);
 
-            var ListaNaTimovi = new List<FootbaalTeam>() {team1,team2,team3,team4,team5,team6,team7};
-            Console.WriteLine("Najgolemo dostignuvanje");
-            var greatestAchieevement = ListaNaTimovi.OrderByDescending(x => x.Dostignuvanje).ToList();
-
-            //var NajgolemoDostignuvanje = new FootbaalTeam();
-           
-
-            foreach (var timovi in greatestAchieevement)
+            var ListaNaTimovi = new List<FootbaalTeam>() { team1, team2, team3, team4, team5, team6, team7 };
+            foreach (var timovi in ListaNaTimovi)
             {
                 Console.WriteLine();
                 timovi.Pecati();
             }
-            FootbaalTeam count = new FootbaalTeam ();
+            Console.WriteLine();
+            Console.WriteLine(" Najgolemo dostignuvanje");
+            var greatestAchieevement = ListaNaTimovi.OrderByDescending(x => x.Dostignuvanje).First();
+            greatestAchieevement.Pecati();
+            FootbaalTeam count = new FootbaalTeam();
             count.ListaNaTimovi = new List<FootbaalTeam>() { team1, team2, team3, team4, team5, team6, team7 };
             Console.WriteLine();
             count.ListaTimovi();
-           
         }
     }
-    public  class FootbaalTeam
+    public class FootbaalTeam
     {
         public string ImeTrener { get; set; }
         public string PrezimeTrener { get; set; }
@@ -57,12 +54,13 @@ namespace FoodballTeam_Ispit_Zadaca
         {
 
         }
-        public FootbaalTeam(string imeTrener, string prezimeTrener,List<int> golovi,double koeficient )
+        public FootbaalTeam(string imeTrener, string prezimeTrener, List<int> golovi, double koeficient)
         {
             ImeTrener = imeTrener;
             PrezimeTrener = prezimeTrener;
             Golovi = golovi;
             Koeficient = koeficient;
+            Dostignuvanje = Achievement();
         }
         public int BrojNaGolovi()
         {
@@ -104,7 +102,7 @@ namespace FoodballTeam_Ispit_Zadaca
                 }
             }
             Console.WriteLine($"Club: {club}\nNacional Team: {nacionalTeam}");
-        }   
+        }
     }
     public class Club : FootbaalTeam
     {
@@ -114,24 +112,26 @@ namespace FoodballTeam_Ispit_Zadaca
         {
 
         }
-        public Club (FootbaalTeam Team, string imeNaKlubot,int brojNaMedalji )
-            : base(Team.ImeTrener,Team.PrezimeTrener,Team.Golovi,Team.Koeficient)
+        public Club(FootbaalTeam Team, string imeNaKlubot, int brojNaMedalji)
+            : base(Team.ImeTrener, Team.PrezimeTrener, Team.Golovi, Team.Koeficient)
         {
             ImeNaKlubot = imeNaKlubot;
             BrojNaMedalji = brojNaMedalji;
+            Dostignuvanje = Achievement();
         }
-        public Club(string imeTrener, string prezimeTrener, List<int> golovi,string imeNaKlubot,int brojNaMedalji, double koeficient)
-            :base(imeTrener, prezimeTrener,golovi,koeficient)
+        public Club(string imeTrener, string prezimeTrener, List<int> golovi, string imeNaKlubot, int brojNaMedalji, double koeficient)
+            : base(imeTrener, prezimeTrener, golovi, koeficient)
         {
             ImeTrener = imeTrener;
             PrezimeTrener = prezimeTrener;
             Golovi = golovi;
             ImeNaKlubot = imeNaKlubot;
             BrojNaMedalji = brojNaMedalji;
+            Dostignuvanje = Achievement();
         }
         public override double Achievement()
         {
-           var Dostignuvanje = (BrojNaGolovi() * Koeficient) + BrojNaMedalji;
+            var Dostignuvanje = (BrojNaGolovi() * Koeficient) + BrojNaMedalji;
             return Dostignuvanje;
         }
         public override void Pecati()
@@ -144,18 +144,19 @@ namespace FoodballTeam_Ispit_Zadaca
     {
         public string Drzava { get; set; }
         public int MegunarodniNastapi { get; set; }
-        
+
         public NatoinalTeam()
         {
 
         }
-        public NatoinalTeam(FootbaalTeam tim, string drzava,int megunarodniNastapi)
-            : base(tim.ImeTrener, tim.PrezimeTrener, tim.Golovi,tim.Koeficient)
+        public NatoinalTeam(FootbaalTeam tim, string drzava, int megunarodniNastapi)
+            : base(tim.ImeTrener, tim.PrezimeTrener, tim.Golovi, tim.Koeficient)
         {
             Drzava = drzava;
             MegunarodniNastapi = megunarodniNastapi;
+            Dostignuvanje = Achievement();
         }
-        public NatoinalTeam(string imeTrener, string prezimeTrener, List<int> golovi, double koeficient,string drzava,int megunarodniNastapi, double dostignuvanje)
+        public NatoinalTeam(string imeTrener, string prezimeTrener, List<int> golovi, double koeficient, string drzava, int megunarodniNastapi, double dostignuvanje)
         {
             ImeTrener = imeTrener;
             PrezimeTrener = prezimeTrener;
@@ -173,7 +174,7 @@ namespace FoodballTeam_Ispit_Zadaca
         public override void Pecati()
         {
             base.Pecati();
-            Console.WriteLine($"Ime na Drzavata : {Drzava} Dostignuvanje : {Achievement()}");
+            Console.WriteLine($" Ime na Drzavata : {Drzava} Dostignuvanje : {Achievement()}");
         }
     }
 }
