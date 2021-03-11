@@ -106,7 +106,7 @@ namespace NbaPlayer
         {
             //  NEDORESENA !!!
             // koj go vrrakja prosekot od obicniot rejting na kosarkarot i rejtingot na All Start rejting .
-             AllStarReiting();
+            AllStarReiting();
             return base.Reiting();
             
         }

@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "bbfd28a3-18bf-4d7f-a145-46004d9bcf90",
+		"name": "CodeacadmyAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EntityDb",
+			"item": [
+				{
+					"name": "Add new faculty",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ekonomski\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44305/faculties/create",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"faculties",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all faculties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/faculties",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"faculties"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "time.mk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "time.mk",
+					"host": [
+						"time",
+						"mk"
+					]
+				},
+				"description": "Simple get request to time.mk"
+			},
+			"response": []
+		},
+		{
+			"name": "Weather Forecast",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44305/weatherforecast/prognozi/tanes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44305",
+					"path": [
+						"weatherforecast",
+						"prognozi",
+						"tanes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Faculty",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44305/faculty/create/PMF",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44305",
+					"path": [
+						"faculty",
+						"create",
+						"PMF"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Faculty with POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"PMFJSON\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44305/faculty/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44305",
+					"path": [
+						"faculty",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Print Faculty",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44305/faculty/print",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44305",
+					"path": [
+						"faculty",
+						"print"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rang",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"PMFRangPost\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44305/faculty/rang",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44305",
+					"path": [
+						"faculty",
+						"rang"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rang PHD bez body",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44305/faculty/rang/phd/PMF",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44305",
+					"path": [
+						"faculty",
+						"rang",
+						"phd",
+						"PMF"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rang Student ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44305/faculty/rang/PMFGet",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44305",
+					"path": [
+						"faculty",
+						"rang",
+						"PMFGet"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

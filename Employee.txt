@@ -1,0 +1,246 @@
+using System;
+using System.Collections.Generic;
+​
+namespace Employee
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Employee employee = new Employee("Marija", 24, 15);
+            Employee emp1 = new SalaryEmployee(22000, "Daniel", 23, 10);
+            Employee emp2 = new HourlyEmployee("Monika", 27, 5, 10, 200);
+            Employee emp4 = new HourlyEmployee("Monika", 27, 5, 10, 200);
+            Employee emp3 = new Freelancers("Dimitar", 28, 9, 3, new List<double>() { 25000, 30000, 50000, 120000, 5000 });
+           
+            Company codeAcademy = new Company("CodeAcademy");
+            codeAcademy.Listavraboteni = new List<Employee>() { emp4, emp1, emp2, emp3 };
+            codeAcademy.Lista_Vraboteni();
+            
+            //var dali = Employee.Daliseisti(Aleksandar, Marko); // static funkcija
+            //var daliEIstoSo = Aleksandar.DaliEIstSo(Marko); // ne e static
+​
+            //Company company = new Company("Smetkovodstveno_biro_ekonomik");
+            //company.Lista_Vraboteni();
+            //hourly.Plata();
+        }
+    }
+​
+    public class Employee
+    {
+        public string Ime { get; set; }
+        public int Godini { get; set; }
+        public int Iskustvo { get; set; }
+        public double plata { get; set; }
+        public double bonus { get; set; }
+​
+        public Employee(string ime, int godini, int iskustvo)
+        {
+            Ime = ime;
+            Godini = godini;
+            Iskustvo = iskustvo;
+        }
+​
+        public virtual double Plata()
+        {
+            return plata;
+        }
+​
+        public virtual double Bonus()
+        {
+            return bonus;
+        }
+​
+        public bool DaliEIstSo(Employee emp)
+        {
+​
+            if (Godini == emp.Godini && bonus == emp.bonus)
+            {
+                return true;
+            }
+            return false;
+        }
+​
+        public static bool Daliseisti(Employee emp1, Employee emp2)
+        {
+            if (emp1.Godini == emp2.Godini && emp1.bonus == emp2.bonus)
+            {
+                return true;
+            }
+            return false;
+        }
+    }
+​
+    public class SalaryEmployee : Employee
+    {
+        int Osnovnaplata { get; set; }
+​
+        public SalaryEmployee(int osnovnaplata, string ime, int godini, int iskustvo)
+        : base(ime, godini, iskustvo)
+        {
+            Osnovnaplata = osnovnaplata;
+            Bonus();
+        }
+​
+        public override double Plata()
+        {
+            plata = (Osnovnaplata + bonus);
+            return plata;
+        }
+​
+        public override double Bonus()
+        {
+            bonus = Osnovnaplata * Godini / 100;
+            return bonus;
+        }
+​
+        public void pecati()
+        {
+​
+        }
+    }
+​
+    public class HourlyEmployee : Employee
+    {
+        public int Brojnacasovi { get; set; }
+        public double Platapocas { get; set; }
+        public double Vkupnaplata { get; set; }
+​
+        public HourlyEmployee(string ime, int godini, int iskustvo, int brojnacasovi, double platapocas)
+       : base(ime, godini, iskustvo)
+        {
+            Brojnacasovi = brojnacasovi;
+            Platapocas = platapocas;
+            Bonus();
+        }
+​
+        public override double Bonus()
+        {
+​
+            if (Brojnacasovi > 320)
+            {
+                //vraboteniot ima izraboteno poveke od 320 casovi
+                //da se najde razlikata pomegu ,na taa razlika dase  pomnozi plata po cas +50
+                var razlika = Brojnacasovi - 320;
+                bonus = ((Platapocas * 50 / 100) + Platapocas) * razlika;
+​
+            }
+            return bonus;
+        }
+​
+        public double vkupnaPlata()
+        {
+            Vkupnaplata = (Brojnacasovi * Platapocas) + bonus;
+            return Vkupnaplata;
+        }
+​
+        public override double Plata()
+        {
+            if (Brojnacasovi > 320)
+            {
+                bonus = (50 / 100) * Platapocas;
+                Vkupnaplata = (int)((Brojnacasovi * Platapocas) + bonus);
+            }
+            else
+            {
+                bonus = 0;
+                Vkupnaplata = (int)((Brojnacasovi * Platapocas) + bonus);
+            }
+            return plata;
+        }
+        public void pecati()
+        {
+        }
+    }
+    public class Freelancers : Employee
+    {
+        public int Brojnaproekti { get; set; }
+        public int vkupnaplata { get; set; }
+        public List<double> Sumi = new List<double>();
+        public double vkupnasuma { get; set; } = 0;
+​
+        public Freelancers(string ime, int godini, int iskustvo, int brnaproekti, List<double> sumi)
+               : base(ime, godini, iskustvo)
+​
+        {
+            Brojnaproekti = brnaproekti;
+            Sumi = new List<double>();
+        }
+​
+        public override double Bonus()
+        {
+            if (Brojnaproekti > 5)
+            {
+                bonus = (Brojnaproekti - 5) * 1000;
+            }
+            return bonus;
+        }
+        public override double Plata()
+        {
+            plata = (vkupnasuma + bonus);
+            return plata;
+        }
+​
+    }
+    public class Company
+    {
+​
+        public string Ime { get; set; }
+        public int Brojnavraboteni { get; set; }
+​
+        public List<Employee> Listavraboteni = new List<Employee>();
+        public double Vkupnaplata { get; set; } = 0;
+        public int VkupnaplataVr { get; set; } = 0;
+        public double Filtriranap { get; set; } = 0;
+​
+        public Company(string ime)
+        {
+            Ime = ime;
+        }
+​
+        public double VkupnaPlata()
+        {
+            foreach (var vraboten in Listavraboteni)
+            {
+                Vkupnaplata += vraboten.plata;
+            }
+            return Vkupnaplata;
+        }
+​
+        public static double FiltriranaPlata(List<Employee> emp, Employee e)
+        {
+            //dodadi while ako ne postoi toj vraboten vo lista na vraboteni  
+            for (int i = 0; i < emp.Count; i++)
+            {
+                if (emp[i].plata == e.plata)
+                {
+                    return emp[i].plata;
+                }
+            }
+            return e.plata;
+        }
+​
+        public void Lista_Vraboteni()
+        {
+            var freelancers = 0;
+            var salary = 0;
+            var hourly = 0;
+            foreach (var vraboten in Listavraboteni)
+            {
+                if(vraboten is Freelancers)
+                {
+                    freelancers++;
+                }
+                if(vraboten is SalaryEmployee)
+                {
+                    salary++;
+                }
+                if(vraboten is HourlyEmployee)
+                {
+                    hourly++;
+                }
+            }
+            Console.WriteLine($"Freelancers: {freelancers}\nSalary: {salary}\nHourly: {hourly}");
+        }
+    }
+}

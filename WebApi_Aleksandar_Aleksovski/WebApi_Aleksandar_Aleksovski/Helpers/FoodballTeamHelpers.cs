@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
-namespace FootballTeam_Ispit_Zadaca
+namespace WebApi_Aleksandar_Aleksovski.Helpers
 {
-    class Program
+    public class FoodballTeamHelpers
     {
-        static void Main(string[] args)
+        public FootbaalTeam CreateFoodballTeam(string imeTrener)
         {
             var tim1 = new FootbaalTeam("Aleksandar", "Aleksovski", new List<int> { 7, 5, 5 });
             var tim2 = new FootbaalTeam("Viktor", "Nikolovski", new List<int> { 6, 4, 1 });
@@ -15,30 +16,35 @@ namespace FootballTeam_Ispit_Zadaca
             var tim5 = new FootbaalTeam("Pero", "Spasevski", new List<int> { 3, 2, 4 });
             var tim6 = new FootbaalTeam("Stole", "Stolevski", new List<int> { 2, 1, 8 });
             var tim7 = new FootbaalTeam("Ilija", "Mitrovski", new List<int> { 1, 2, 5 });
-
+          
             FootbaalTeam team1 = new Club(tim1, "Vardar", 3);
             FootbaalTeam team2 = new Club(tim2, "Rabotnicki", 4);
             FootbaalTeam team3 = new Club(tim3, "Pelister", 5);
             FootbaalTeam team4 = new Club(tim4, "Akademija Pandev", 6);
             FootbaalTeam team5 = new NatoinalTeam(tim5, "Makedonija", 7);
             FootbaalTeam team6 = new NatoinalTeam(tim6, "Srbija", 8);
-            FootbaalTeam team7 = new NatoinalTeam(tim7, "Hrvatska", 9);
-
+            FootbaalTeam team7 = new NatoinalTeam(tim7, "Hrvatska", 9);     
+            
             var ListaNaTimovi = new List<FootbaalTeam>() { team1, team2, team3, team4, team5, team6, team7 };
             foreach (var timovi in ListaNaTimovi)
             {
-                Console.WriteLine();
+               // Console.WriteLine();
                 timovi.Pecati();
             }
-            Console.WriteLine();
-            Console.WriteLine(" Najgolemo dostignuvanje :");
+           // Console.WriteLine();
+           // Console.WriteLine(" Najgolemo dostignuvanje :");
             var greatestAchieevement = ListaNaTimovi.OrderByDescending(x => x.Dostignuvanje).First();
             greatestAchieevement.Pecati();
-           
+
             FootbaalTeam count = new FootbaalTeam();
             count.ListaNaTimovi = new List<FootbaalTeam>() { team1, team2, team3, team4, team5, team6, team7 };
-            Console.WriteLine();
+           // Console.WriteLine();
             count.ListaTimovi();
+
+            tim1.Dostignuvanje = team1.Dostignuvanje;
+            tim2.Dostignuvanje = team2.Dostignuvanje;
+            var foodbalTeam = new FootbaalTeam() {ImeTrener=imeTrener, ListaNaTimovi = new List<FootbaalTeam>() { tim1,tim2 } };
+            return foodbalTeam;
         }
     }
     public class FootbaalTeam
@@ -54,8 +60,7 @@ namespace FootballTeam_Ispit_Zadaca
         {
 
         }
-       
-        public FootbaalTeam(string imeTrener, string prezimeTrener, List<int> golovi )
+        public FootbaalTeam(string imeTrener, string prezimeTrener, List<int> golovi)
         {
             ImeTrener = imeTrener;
             PrezimeTrener = prezimeTrener;
@@ -81,9 +86,9 @@ namespace FootballTeam_Ispit_Zadaca
         {
             return Dostignuvanje;
         }
-        public virtual void Pecati() 
+        public virtual string Pecati()
         {
-            Console.WriteLine($" Ime : {ImeTrener} Prezime : {PrezimeTrener} Golovi : {BrojNaGolovi()} ");
+            return $" Ime : {ImeTrener} Prezime : {PrezimeTrener} Golovi : {BrojNaGolovi()} ";
         }
         public virtual void ListaTimovi()
         {
@@ -100,7 +105,7 @@ namespace FootballTeam_Ispit_Zadaca
                     nacionalTeam++;
                 }
             }
-            Console.WriteLine($"Club: {club}\nNacional Team: {nacionalTeam}");
+           // Console.WriteLine($"Club: {club}\nNacional Team: {nacionalTeam}");
         }
     }
     public class Club : FootbaalTeam
@@ -133,10 +138,10 @@ namespace FootballTeam_Ispit_Zadaca
             var Dostignuvanje = (BrojNaGolovi() * PromenaKoeficient()) + BrojNaMedalji;
             return Dostignuvanje;
         }
-        public override void Pecati()
+        public override string Pecati()
         {
             base.Pecati();
-            Console.WriteLine($" Ime na klubot : {ImeNaKlubot} Dostignuvanje : {Achievement()}");
+           return $" Ime na klubot : {ImeNaKlubot} Dostignuvanje : {Achievement()}";
         }
     }
     public class NatoinalTeam : FootbaalTeam
@@ -169,10 +174,10 @@ namespace FootballTeam_Ispit_Zadaca
             var Dostignivanje = (BrojNaGolovi() * PromenaKoeficient()) + MegunarodniNastapi;
             return Dostignivanje;
         }
-        public override void Pecati()
+        public override string Pecati()
         {
             base.Pecati();
-            Console.WriteLine($" Ime na Drzavata : {Drzava} Dostignuvanje : {Achievement()}");
+          return $" Ime na Drzavata : {Drzava} Dostignuvanje : {Achievement()}";
         }
     }
 }
