@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using WebApi_Aleksandar_Aleksovski.Entities;
 
 namespace WebApi_Aleksandar_Aleksovski
 {
@@ -24,11 +25,9 @@ namespace WebApi_Aleksandar_Aleksovski
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddNewtonsoftJson(options =>
-            {
-                // new JsonSerializerOptions()
+            services.AddControllers().AddNewtonsoftJson(options =>  // new JsonSerializerOptions()
+            {  
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-
                 options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
                 options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
 
@@ -37,6 +36,10 @@ namespace WebApi_Aleksandar_Aleksovski
             });
 
             services.AddSwaggerGen();
+
+            services.AddTransient<IFootballTeamServices, FootballTeamServices>();
+            services.AddTransient<IClubServices, ClubServices>();
+            services.AddTransient<INatoinalTeamServices, NatoinalTeamServices>();
 
             services.AddTransient<IFootBallTeamServices_2>(x => new FootBallTeamServices_2("mk"));
 

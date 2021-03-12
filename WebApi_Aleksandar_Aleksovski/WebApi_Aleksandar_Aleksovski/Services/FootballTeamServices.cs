@@ -7,10 +7,10 @@ using System.Linq;
 
 namespace WebApi_Aleksandar_Aleksovski.Services
 {
-    public class FootballTeam : IFootballTeamServices
+    public class FootballTeamServices : IFootballTeamServices
     {
         private readonly IFootballTeamDataContext db;
-        public FootballTeam(IFootballTeamDataContext db)
+        public FootballTeamServices(IFootballTeamDataContext db)
         {
             this.db = db;
         }
