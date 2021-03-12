@@ -9,8 +9,8 @@ namespace WebApi_Aleksandar_Aleksovski.Services
 {
     public class NatoinalTeamServices : INatoinalTeamServices
     {
-        private readonly IFoodballTeamDataContext db;
-        public NatoinalTeamServices(IFoodballTeamDataContext db)
+        private readonly IFootballTeamDataContext db;
+        public NatoinalTeamServices(IFootballTeamDataContext db)
         {
             this.db = db;
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebApi_Aleksandar_Aleksovski.Helpers
 {
-    public class FoodbalTeamModelRequest
+    public class FootbalTeamModelRequest
     {
         public string ImeTrener { get; set; }
         public string PrezimeTrener { get; set; }

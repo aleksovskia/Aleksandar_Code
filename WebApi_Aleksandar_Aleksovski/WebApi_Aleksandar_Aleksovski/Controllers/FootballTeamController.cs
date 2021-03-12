@@ -13,12 +13,12 @@ namespace WebApi_Aleksandar_Aleksovski.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public  class FoodballTeam : ControllerBase
+    public  class FootballTeam : ControllerBase
     {
-        private readonly IFoodballTeamServices _foodBallTeamServices;
-        public FoodballTeam (IFoodballTeamServices foodBallTeam)
+        private readonly IFootballTeamServices _foodBallTeamServices;
+        public FootballTeam (IFootballTeamServices footBallTeam)
         {
-            _foodBallTeamServices = foodBallTeam;
+            _foodBallTeamServices = footBallTeam;
         }
  
     }

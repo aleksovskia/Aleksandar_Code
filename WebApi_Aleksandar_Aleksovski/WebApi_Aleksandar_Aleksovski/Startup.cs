@@ -1,20 +1,14 @@
-
+using WebApi_Aleksandar_Aleksovski.Data;
+using WebApi_Aleksandar_Aleksovski.Services;
 using WebApi_Aleksandar_Aleksovski.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
-using System.Threading.Tasks;
-using WebApi_Aleksandar_Aleksovski.Helpers;
-using WebApi_Aleksandar_Aleksovski.Services;
+using System.Text.Json.Serialization;
 
 namespace WebApi_Aleksandar_Aleksovski
 {
@@ -30,13 +24,21 @@ namespace WebApi_Aleksandar_Aleksovski
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddJsonOptions(options => new JsonSerializerOptions()
+            services.AddControllers().AddNewtonsoftJson(options =>
             {
-                WriteIndented = true,
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                // new JsonSerializerOptions()
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
+                options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+                options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+
+                //  WriteIndented = true,
+                // PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
-          
-          services.AddTransient<IFoodBallTeamServices_2>(x => new FoodBallTeamServices_2("mk"));
+
+            services.AddSwaggerGen();
+
+            services.AddTransient<IFootBallTeamServices_2>(x => new FootBallTeamServices_2("mk"));
         }
 
   
@@ -47,6 +49,11 @@ namespace WebApi_Aleksandar_Aleksovski
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+
+            });
 
             app.UseHttpsRedirection();
 

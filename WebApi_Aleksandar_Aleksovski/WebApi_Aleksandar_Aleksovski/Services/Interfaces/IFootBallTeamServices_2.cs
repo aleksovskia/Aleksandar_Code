@@ -6,13 +6,13 @@ using WebApi_Aleksandar_Aleksovski.Helpers;
 
 namespace WebApi_Aleksandar_Aleksovski.Services.Interfaces
 {
-   public interface IFoodBallTeamServices_2
+   public interface IFootBallTeamServices_2
 
     {
         FootbaalTeam  FootbaalTeam { get; set; }
       
         FootbaalTeam GetName(string imeTrener);
-        FoodbalTeamModelResponce GetFoodbalTeamGolovi(string imeTrener);
-        FoodbalTeamModelRequest GetAchievement(string imeTrener);
+        FootbalTeamModelResponce GetFoodbalTeamGolovi(string imeTrener);
+        FootbalTeamModelRequest GetAchievement(string imeTrener);
     }
 }

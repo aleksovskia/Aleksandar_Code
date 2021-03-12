@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApi_Aleksandar_Aleksovski.Helpers
 {
-    public class FoodballTeamHelpers
+    public class FootballTeamHelpers
     {
         public FootbaalTeam CreateFoodballTeam(string imeTrener)
         {
