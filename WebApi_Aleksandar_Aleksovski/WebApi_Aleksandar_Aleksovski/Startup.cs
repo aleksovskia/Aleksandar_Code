@@ -39,6 +39,8 @@ namespace WebApi_Aleksandar_Aleksovski
             services.AddSwaggerGen();
 
             services.AddTransient<IFootBallTeamServices_2>(x => new FootBallTeamServices_2("mk"));
+
+            services.AddDbContext<IFootballTeamDataContext, FootballTeamDataContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Aleksandar_AleksovskiDB"]));
         }
 
   
