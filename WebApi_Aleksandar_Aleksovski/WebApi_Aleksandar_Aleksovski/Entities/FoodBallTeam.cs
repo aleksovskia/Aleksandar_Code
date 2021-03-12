@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 namespace WebApi_Aleksandar_Aleksovski.Entities
 {
     public class FoodBallTeam
+
     {
+        public int Id { get; set; }
         public string ImeTrener { get; set; }
         public string PrezimeTrener { get; set; }
         public  int Golovi { get; set; } // = new List<int>();

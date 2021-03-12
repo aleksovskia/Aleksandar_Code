@@ -7,6 +7,7 @@ namespace WebApi_Aleksandar_Aleksovski.Entities
 {
     public class Club
     {
+        public int Id { get; set; }
         public string ImeNaKlubot { get; set; }
         public int BrojNaMedalji { get; set; }
     }

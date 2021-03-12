@@ -7,6 +7,7 @@ namespace WebApi_Aleksandar_Aleksovski.Entities
 {
     public class NatoinalTeam
     {
+        public int Id { get; set; }
         public string Drzava { get; set; }
         public int MegunarodniNastapi { get; set; }
     }

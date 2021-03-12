@@ -6,16 +6,14 @@ using WebApi_Aleksandar_Aleksovski.Entities;
 
 namespace WebApi_Aleksandar_Aleksovski.Services.Interfaces
 {
-    public interface INatoinalTeamServices
+    public interface IFoodballTeamServices
     {
-        List<NatoinalTeam> Get();
-        NatoinalTeam Get(int id);
-        NatoinalTeam Add(NatoinalTeam nt);
-        NatoinalTeam Update(NatoinalTeam natoinalTeam);
+        List<FoodBallTeam> Get();
+        FoodBallTeam Get(int id);
+        FoodBallTeam Add(FoodBallTeam ft );
+        FoodBallTeam Update(FoodBallTeam foodBallTeam);
         bool Delete(int id);
     }
-      
-    
 
 }
 
