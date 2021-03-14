@@ -38,7 +38,7 @@ namespace WebApi_Aleksandar_Aleksovski.Data
             modelBuilder.Entity<FootBallTeam>()
                 .HasMany<Club>(club => club.Clubs)
                 .WithOne(Club => Club.FootBallTeam)
-                .HasForeignKey(s => s.FootBallTeam)
+                .HasForeignKey(s => s.FootBallTeamId)
                 .OnDelete(DeleteBehavior.Restrict);
 
         }

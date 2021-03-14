@@ -10,9 +10,13 @@ namespace WebApi_Aleksandar_Aleksovski.Services
     public class ClubServices : IClubServices
     {
         private readonly IFootballTeamDataContext db;
-        public ClubServices(IFootballTeamDataContext db)
+        private readonly IFootballTeamServices _ft;
+        
+
+        public ClubServices(IFootballTeamDataContext db,IFootballTeamServices ft)
         {
             this.db = db;
+            _ft = ft;
         }
         public Club Add(Club c)
         {
@@ -40,6 +44,28 @@ namespace WebApi_Aleksandar_Aleksovski.Services
             var updatedClub = db.Club.Update(club);
             db.SaveChanges();
             return updatedClub.Entity;
+        }
+
+
+        public double Achievement(List<Club> club)
+        {
+            var brojNaMedalji = 0.0;
+            var koefivient = 0.0;
+            var golovi = 0.0;
+            foreach(var achievement in club)
+            {
+                brojNaMedalji += achievement.BrojNaMedalji;
+                golovi += achievement.FootBallTeam.Golovi;
+                koefivient = +achievement.FootBallTeam.Koeficient;
+
+            }
+            return (brojNaMedalji * koefivient) + golovi;
+        }
+
+        public double Achievement(int clubId)
+        {
+            var club = db.Club.Where(x => x.Id == clubId).FirstOrDefault();
+            return Achievement(clubId);
         }
     }
 }

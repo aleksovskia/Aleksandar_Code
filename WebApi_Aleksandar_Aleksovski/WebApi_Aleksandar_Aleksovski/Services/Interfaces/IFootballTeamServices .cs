@@ -12,7 +12,7 @@ namespace WebApi_Aleksandar_Aleksovski.Services.Interfaces
         FootBallTeam Get(int id);
         FootBallTeam Add(FootBallTeam ft );
         FootBallTeam Update(FootBallTeam footBallTeam);
-        public List<int> Golovi { get; set; }
+
         bool Delete(int id);
     }
 

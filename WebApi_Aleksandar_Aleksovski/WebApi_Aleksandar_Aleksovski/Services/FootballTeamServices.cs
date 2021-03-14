@@ -15,11 +15,6 @@ namespace WebApi_Aleksandar_Aleksovski.Services
             this.db = db;
         }
 
-        public List<int> Golovi 
-        { 
-            get => throw new System.NotImplementedException(); 
-            set => throw new System.NotImplementedException(); 
-        }
 
         public FootBallTeam Add(FootBallTeam ft)
         {
@@ -27,6 +22,7 @@ namespace WebApi_Aleksandar_Aleksovski.Services
             db.SaveChanges();
             return foodballlTeam.Entity;
         }
+
 
         public bool Delete(int id)
         {
@@ -38,7 +34,8 @@ namespace WebApi_Aleksandar_Aleksovski.Services
 
         public List<FootBallTeam> Get()
         {
-            return db.FootBallTeam.Include(c => c.ImeTrener).Include(b => b.PrezimeTrener).ToList();
+            // return db.FootBallTeam.Include(c => c.ImeTrener).Include(b => b.PrezimeTrener).Include(x=> x.Golovi).ToList();
+            return db.FootBallTeam.ToList();
         }
 
         public FootBallTeam Get(int id)
@@ -53,5 +50,7 @@ namespace WebApi_Aleksandar_Aleksovski.Services
             db.SaveChanges();
             return updatedFootballTeam.Entity;
         }
+
+        
     }
 }

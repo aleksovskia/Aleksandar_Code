@@ -10,10 +10,37 @@ namespace WebApi_Aleksandar_Aleksovski.Services
     public class NatoinalTeamServices : INatoinalTeamServices
     {
         private readonly IFootballTeamDataContext db;
+      
+
         public NatoinalTeamServices(IFootballTeamDataContext db)
         {
             this.db = db;
         }
+
+        public double Achievement(List<NatoinalTeam> natoinalTeams)
+        {
+            
+            
+            var nastapi = 0.0;
+            var koefivient = 0.0;
+            var golovi = 0.0;
+            foreach (var achievement in natoinalTeams)
+            {
+               nastapi += achievement.MegunarodniNastapi;
+               golovi += achievement.FootBallTeam.Golovi;
+               koefivient = +achievement.FootBallTeam.Koeficient;
+
+            }
+            return (nastapi * koefivient) + golovi;
+            
+        }
+
+        public double Achievement(int footballTeamId)
+        {
+            var natoinalTeam = db.NatoinalTeam.Where(x => x.Id == footballTeamId).FirstOrDefault();
+            return Achievement(natoinalTeam.Id);
+        }
+
         public NatoinalTeam Add(NatoinalTeam nt)
         {
             var nationalTeam = db.NatoinalTeam.Add(nt);
@@ -41,6 +68,7 @@ namespace WebApi_Aleksandar_Aleksovski.Services
             db.SaveChanges();
             return updatedNationalTeam.Entity;
         }
+
     }
 }
 

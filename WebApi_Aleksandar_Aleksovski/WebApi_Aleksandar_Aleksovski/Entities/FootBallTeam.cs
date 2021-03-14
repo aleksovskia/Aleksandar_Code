@@ -12,7 +12,7 @@ namespace WebApi_Aleksandar_Aleksovski.Entities
         public string ImeTrener { get; set; }
         public string PrezimeTrener { get; set; }
         public int Golovi { get; set; } // = new List<int>();  //   public List<int> Golovi { get; set; }
-        public double Dostignuvanje { get; set; }
+       // public double Dostignuvanje { get; set; }
 
         public double Koeficient = 2.0;
 
