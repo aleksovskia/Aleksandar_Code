@@ -24,8 +24,8 @@ namespace WebApi_Aleksandar_Aleksovski.Services
 
         public double Achievement(int natoinalTeamId)
         {
-            // var natoinalTeam = db.NatoinalTeam.Where(x => x.Id == footballTeamId).FirstOrDefault();
-            // return Achievement(natoinalTeam.Id);
+         //   var natoinalTeam = db.NatoinalTeam.Where(x => x.Id == natoinalTeamId).FirstOrDefault();
+        //    return Achievement(natoinalTeam.Id);
             var natoinalTeam = db.NatoinalTeam.FirstOrDefault(x => x.Id == natoinalTeamId);
             natoinalTeam.FootBallTeam = db.FootBallTeam.FirstOrDefault(x => x.Id == natoinalTeam.FootBallTeamId);
             return Achievement(natoinalTeam);
