@@ -9,8 +9,8 @@ using WebApi_Aleksandar_Aleksovski.Data;
 namespace WebApi_Aleksandar_Aleksovski.Migrations
 {
     [DbContext(typeof(FootballTeamDataContext))]
-    [Migration("20210314223006_Init")]
-    partial class Init
+    [Migration("20210315222036_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,9 +49,6 @@ namespace WebApi_Aleksandar_Aleksovski.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<double>("Dostignuvanje")
-                        .HasColumnType("float");
 
                     b.Property<int>("Golovi")
                         .HasColumnType("int");

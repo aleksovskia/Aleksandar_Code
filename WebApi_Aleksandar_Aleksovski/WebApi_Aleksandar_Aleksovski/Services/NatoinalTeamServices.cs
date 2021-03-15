@@ -17,28 +17,18 @@ namespace WebApi_Aleksandar_Aleksovski.Services
             this.db = db;
         }
 
-        public double Achievement(List<NatoinalTeam> natoinalTeams)
+        public double Achievement(NatoinalTeam natoinalTeams)
         {
-            
-            
-            var nastapi = 0.0;
-            var koefivient = 0.0;
-            var golovi = 0.0;
-            foreach (var achievement in natoinalTeams)
-            {
-               nastapi += achievement.MegunarodniNastapi;
-               golovi += achievement.FootBallTeam.Golovi;
-               koefivient = +achievement.FootBallTeam.Koeficient;
-
-            }
-            return (nastapi * koefivient) + golovi;
-            
+            return (natoinalTeams.FootBallTeam.Golovi * natoinalTeams.FootBallTeam.Koeficient) + natoinalTeams.MegunarodniNastapi;  
         }
 
-        public double Achievement(int footballTeamId)
+        public double Achievement(int natoinalTeamId)
         {
-            var natoinalTeam = db.NatoinalTeam.Where(x => x.Id == footballTeamId).FirstOrDefault();
-            return Achievement(natoinalTeam.Id);
+            // var natoinalTeam = db.NatoinalTeam.Where(x => x.Id == footballTeamId).FirstOrDefault();
+            // return Achievement(natoinalTeam.Id);
+            var natoinalTeam = db.NatoinalTeam.FirstOrDefault(x => x.Id == natoinalTeamId);
+            natoinalTeam.FootBallTeam = db.FootBallTeam.FirstOrDefault(x => x.Id == natoinalTeam.FootBallTeamId);
+            return Achievement(natoinalTeam);
         }
 
         public NatoinalTeam Add(NatoinalTeam nt)

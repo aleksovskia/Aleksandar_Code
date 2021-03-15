@@ -2,7 +2,7 @@
 
 namespace WebApi_Aleksandar_Aleksovski.Migrations
 {
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,8 +14,7 @@ namespace WebApi_Aleksandar_Aleksovski.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ImeTrener = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PrezimeTrener = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Golovi = table.Column<int>(type: "int", nullable: false),
-                    Dostignuvanje = table.Column<double>(type: "float", nullable: false)
+                    Golovi = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

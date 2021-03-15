@@ -47,25 +47,19 @@ namespace WebApi_Aleksandar_Aleksovski.Services
         }
 
 
-        public double Achievement(List<Club> club)
+        public double Achievement(Club club)
         {
-            var brojNaMedalji = 0.0;
-            var koefivient = 0.0;
-            var golovi = 0.0;
-            foreach(var achievement in club)
-            {
-                brojNaMedalji += achievement.BrojNaMedalji;
-                golovi += achievement.FootBallTeam.Golovi;
-                koefivient = +achievement.FootBallTeam.Koeficient;
 
-            }
-            return (brojNaMedalji * koefivient) + golovi;
+            return (club.BrojNaMedalji * club.FootBallTeam.Koeficient) + club.FootBallTeam.Golovi;
         }
 
         public double Achievement(int clubId)
         {
-            var club = db.Club.Where(x => x.Id == clubId).FirstOrDefault();
-            return Achievement(clubId);
+            // var club = db.Club.Where(x => x.Id == clubId).FirstOrDefault();
+            // return Achievement(clubId);
+            var club = db.Club.FirstOrDefault(x => x.Id == clubId);
+            club.FootBallTeam = db.FootBallTeam.FirstOrDefault(x => x.Id == club.FootBallTeamId);
+            return Achievement(club);
         }
     }
 }

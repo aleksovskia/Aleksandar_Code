@@ -48,9 +48,6 @@ namespace WebApi_Aleksandar_Aleksovski.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<double>("Dostignuvanje")
-                        .HasColumnType("float");
-
                     b.Property<int>("Golovi")
                         .HasColumnType("int");
 
