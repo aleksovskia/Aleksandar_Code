@@ -11,21 +11,25 @@ h1{
     padding: 10Spx 10px;
     cursor: pointer;
     float: center;
-    
-    
+}
+h1:hover{
+    color: white;
 }
 h2{
     background-color:darkslategray;
     color:rgb(177, 221, 223);
     display: inline-block;
-
-    
+    cursor: pointer;     
+}
+h2:hover{   
+    color: white;    
 }
 #negroni,#Manhattan,#CloverClub,#OldFashioned {
     text-align: left;
      background-color:  rgb(216, 216, 228);
+     padding: 20px;
 }
-img {
+img:hover {
     margin-left:0px ; 
     cursor: pointer;
 }
@@ -51,12 +55,15 @@ img {
     font-size: 16px;
     margin-left: 10px;
     cursor: pointer;  
-    
-
 }
 .buttonNegroni:hover,.manhattanButton:hover,.CloverClubButton:hover,.OldFashionedButton:hover {
-    background-color: blueviolet;
-    border-top:black;
+    background-color: rgb(8, 240, 66);
+    color: black;
+    border:none;
+    border-style:groove;
+}
+#negroni:hover,#Manhattan:hover,#CloverClub:hover,#OldFashioned:hover{
+    border-style:none;
 }
 
  
