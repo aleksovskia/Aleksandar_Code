@@ -1,0 +1,153 @@
+.brightness50 {
+    filter: brightness(50%);
+}
+
+#codeAcademyNavBar {
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+}
+
+.navbar-padding {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+.navbar-shrink {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.btn-outline-light:hover {
+    color: black;
+}
+
+#navBarSearch input {
+    border: 1px solid white;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    transition: font-size 0.3s;
+}
+
+.navbar-brand-font-size-1 {
+    font-size: 1em;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn-no-box-shadow {
+    box-shadow: 0 0 0 0;
+}
+
+.btn-no-box-shadow:focus {
+    box-shadow: 0 0 0 0;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+}
+
+#productCards {
+    padding: 30px;
+}
+
+#popularProducts {
+    background: #698996;
+}
+
+#popularProducts h2 {
+    color: white;
+    padding: 60px 30px 0 30px;
+    cursor: default;
+}
+
+#popularProducts h4 {
+    color: white;
+    cursor: default;
+    margin-top: 20px;
+}
+
+#popularProducts i {
+    font-size: 75px;
+    color: black;
+    background: #C9C5BA;
+    border-radius: 60px;
+    padding: 25px;
+}
+#Icon-Social-Network ii a {
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    background:none;
+    border:1px solid none;
+    border-radius:100px;
+    padding: 8px;
+    margin-top: 20px;
+    list-style-type: disc;
+    cursor: pointer;
+ 
+}
+#Icon-Social-Network ii a:hover{
+    color: #C9C5BA;
+  
+}
+
+
+#popularProducts .subHeading {
+    color: white;
+    cursor: default;
+}
+
+#popularProducts p {
+    color: rgb(224, 223, 223);
+    margin-bottom: 79px;
+}
+
+#contactForm {
+    height: 500px;
+    background: #212529;
+    color: white;
+    background-image: url(../img/map-image.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#contactForm h2 {
+    padding: 60px 30px 0 30px;
+}
+
+#footer a {
+    color: white;
+}
+
+#footer .bi {
+    font-size: 1.4em;
+}
+
+#footer .container .row {
+    align-items: center;
+    word-wrap: break-word;
+}
+
+.font-size-08 {
+    font-size: 0.8em;
+}
+
+#navbarSupportedContent {
+    margin-top: 5px;
+}
+
+#navBarSearch {
+    background: white;
+}
+
+#navBarSearch button {
+    background: #292F36;
+}
+
+@media (max-width: 575.98px) {
+    #footer .bi {
+        font-size: 1em;
+    }
+}
