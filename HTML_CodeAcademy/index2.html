@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles2.css">
+</head>
+
+<body>
+    <p id="paragraph1">Ова е параграф со сина боја и со id paragraph1</p>
+    <p class="backgroundBlue">Ова е параграф со сина позадина и со класа backgroundBlue</p>
+    <p class="backgroundBlue colorWhite">Ова е параграф со сина позадина, бел боја и со класи: backgroundBlue colorWhite</p>
+    <p id="paragraph4" class="backgroundBlue">Ова е параграф со сина позадина, бел боја и со класи: backgroundBlue colorWhite</p>
+    <p>Ова е без дефиниран фонт</p>
+    <p id="paragraph5">Ова е параграф со различен фонт</p>
+    <div id="div1">Ова е div со рамка од 2 px со полна линија и со црвена боја со padding i margin</div>
+    <div id="div2">Ова е div со центриран текст</div>
+    <hr>
+    <div id="exampleDivGtP">
+        <h3>Тука ќе користиме div > p</h3>
+        <p>на овој параграф parent е div елементот над него</p>
+        <p>на овој параграф parent е div елементот над него</p>
+        <span>
+            <p>на овој параграф parent е span елементот над него</p>
+        </span>
+    </div>
+    <a href="index123.html">Default Link to index without style</a>
+    <hr>
+    <div id="divLinks">
+        <h3>Links со custom CSS.</h3>
+        <a href="index.html">Link to local index file</a>
+        <a href="https://google.com">External link to google</a>
+        <a href="https://goasdogle.com" target="_blank">External link to google in new tab</a>
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Bird#Definition">Link - scroll до елементот со id=Definition na wikipedia/bird</a>
+    <img src="img/pic_trulli.jpg" alt="Italian Trulli" width="150" height="150">
+    <span>Hello span</span>
+    <div>Hello div</div>
+    <hr>
+    <table id="basicTable">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
+
+    <h2>An Unordered HTML List</h2>
+
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+
+    <h2>An Ordered HTML List</h2>
+
+    <ol>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ol>
+
+    <button id="ok" type="button" onclick="document.getElementById('paragraph4').textContent = Date();console.log('Kliknav na kopceto Ok')">Ok</button>
+    &copy;
+    <form>
+        <label for="lname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe">
+    </form>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="./js/jquery.js"></script>
+    <script src="./js/script.js"></script>
+    <script>
+        console.log(sobiranje(5, 5));
+    </script>   
+</body>
+
+</html>

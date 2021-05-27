@@ -1,0 +1,111 @@
+body{
+  height: 2500px;
+}
+#paragraph1 {
+  color: blue;
+}
+
+.backgroundBlue {
+  background-color: blue;
+}
+
+.colorWhite {
+  color: white;
+}
+
+#paragraph4 {
+  font-size: 2em;
+}
+
+#paragraph5 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#div1 {
+  border: 2px solid red;
+  padding: 12px 15px 17px 20px;
+  margin: 10px;
+}
+
+#div2 {
+  text-align: center;
+}
+
+#exampleDivGtP > p {
+  background-color: brown;
+}
+
+#divLinks > a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+#divLinks > a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+#divLinks > a:hover {
+  color: red;
+  background-color: black;
+  text-decoration: underline;
+}
+
+#divLinks > a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#basicTable,
+#basicTable th,
+#basicTable td {
+  width: 100%;
+  border: 1px solid silver;
+  border-collapse: collapse;
+  user-select: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#basicTable th {
+  font-size: 18px;
+  background-color: slategray;
+}
+
+#basicTable th:hover {
+  background-color: gainsboro;
+}
+
+#basicTable td {
+  text-align: center;
+  cursor: pointer;
+}
+
+#basicTable td:hover {
+  background-color: #dddddd;
+}
+
+#basicTable td:nth-child(even) {
+  text-align: left;
+}
+
+#basicTable td {
+  padding: 15px;
+}
+
+#basicTable th {
+  padding: 15px;
+  text-align: center;
+}
+
+#basicTable {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  #basicTable {
+    display: block !important;
+  }
+}

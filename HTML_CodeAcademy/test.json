@@ -1,0 +1,284 @@
+[
+    {
+        "_id": ObjectId("60670f0f10ebea7b5dd8c6dd"),
+        "default": false,
+        "key": "WEIGHT",
+        "order": 0
+    },
+    {
+        "_id": ObjectId("60670f0f625e94d84ed9f6df"),
+        "default": false,
+        "key": "BMI",
+        "order": 1
+    },
+    {
+        "_id": ObjectId("60670f0f36880dcd70d9c726"),
+        "default": false,
+        "key": "BLOODPRESSURE",
+        "order": 2
+    },
+    {
+        "_id": ObjectId("60670f0f14445635a559888b"),
+        "default": false,
+        "key": "HEARTBEAT",
+        "order": 3
+    },
+    {
+        "_id": ObjectId("60670f0f0ceb532b944df591"),
+        "default": false,
+        "key": "STEPS",
+        "order": 4
+    },
+    {
+        "_id": ObjectId("60670f0f55395b88697f4b13"),
+        "default": false,
+        "key": "SLEEP",
+        "order": 5
+    },
+    {
+        "_id": ObjectId("60670f0f48f551064aba34c9"),
+        "default": false,
+        "key": "CALORIES_IN",
+        "order": 6
+    },
+    {
+        "_id": ObjectId("60670f0f052e5ba293124663"),
+        "default": false,
+        "key": "CALORIES_OUT",
+        "order": 7
+    },
+    {
+        "_id": ObjectId("60670f0fa14ac781fd4a7888"),
+        "default": false,
+        "key": "SPECIAL",
+        "order": 8
+    },
+    {
+        "_id": ObjectId("60670f0f837a0164aef868d7"),
+        "default": false,
+        "key": "CHOLESTEROL",
+        "order": 9
+    },
+    {
+        "_id": ObjectId("60670f0f71fcccf21d7a6c77"),
+        "default": false,
+        "key": "HEMOGLOBIN",
+        "order": 10
+    },
+    {
+        "_id": ObjectId("60670f0f3e022e1bfd3d35b8"),
+        "default": false,
+        "key": "HEIGHT",
+        "order": 11
+    },
+    {
+        "_id": ObjectId("60670f0fe22c642289eb9698"),
+        "default": false,
+        "key": "LOCATION",
+        "order": 12
+    },
+    {
+        "_id": ObjectId("60670f0fcff9266a88b42580"),
+        "default": false,
+        "key": "SMOKING",
+        "order": 13
+    },
+    {
+        "_id": ObjectId("60670f0f48cda9ab9a82b929"),
+        "default": false,
+        "key": "MOOD",
+        "order": 14
+    },
+    {
+        "_id": ObjectId("60670f0ff269de22d62934cd"),
+        "default": false,
+        "key": "FAT",
+        "order": 15
+    },
+    {
+        "_id": ObjectId("60670f0fad54ddff9b2e393b"),
+        "default": false,
+        "key": "FLUIDINTAKE",
+        "order": 16
+    },
+    {
+        "_id": ObjectId("60670f0fca6557dc0e96a839"),
+        "default": false,
+        "key": "ALCOHOL",
+        "order": 17
+    },
+    {
+        "_id": ObjectId("60670f0f7229680b8c9717c7"),
+        "default": false,
+        "key": "BLOODCLOTTING",
+        "order": 18
+    },
+    {
+        "_id": ObjectId("60670f0f856f2522c1c10736"),
+        "default": false,
+        "key": "BLOODSUGAR",
+        "order": 19
+    },
+    {
+        "_id": ObjectId("60670f0f834d28c427a320f9"),
+        "default": false,
+        "key": "BLOODOXYGENLEVEL",
+        "order": 20
+    },
+    {
+        "_id": ObjectId("60670f0f92a6f1cd85808228"),
+        "default": false,
+        "key": "TEMPERATURE",
+        "order": 21
+    },
+    {
+        "_id": ObjectId("60670f0fe406533eee9220c6"),
+        "default": false,
+        "key": "CUSTOM",
+        "order": 22
+    },
+    {
+        "_id": ObjectId("60670f0f78e4a875585d35b0"),
+        "default": false,
+        "key": "STAIRS",
+        "order": 23
+    },
+    {
+        "_id": ObjectId("60670f0f49f19f997580137b"),
+        "default": false,
+        "key": "CYCLING",
+        "order": 24
+    },
+    {
+        "_id": ObjectId("60670f0f492b9c303ec53d3e"),
+        "default": false,
+        "key": "INTEGRATIONAPI",
+        "order": 25
+    },
+    {
+        "_id": ObjectId("60670f0f6ed38ae56eafc974"),
+        "default": false,
+        "key": "ABDOMINAL_CIRCUMFERENCE",
+        "order": 26
+    },
+    {
+        "_id": ObjectId("60670f0fd32d34a1b6c3e493"),
+        "default": false,
+        "key": "INSPIRATORY_PRESSURE",
+        "order": 27
+    },
+    {
+        "_id": ObjectId("60670f0fab6299d58848a77b"),
+        "default": false,
+        "key": "GRIP_STRENGTH",
+        "order": 28
+    },
+    {
+        "_id": ObjectId("60670f0faab16ac8a766e74b"),
+        "default": false,
+        "key": "FUNCTIONAL_MOVEMENT",
+        "order": 29
+    },
+    {
+        "_id": ObjectId("60670f0f34cfe2e795a62acc"),
+        "default": false,
+        "key": "VO2_MAX",
+        "order": 30
+    },
+    {
+        "_id": ObjectId("60670f0fb52a5ee53c6003c7"),
+        "default": false,
+        "key": "HS_CRP",
+        "order": 31
+    },
+    {
+        "_id": ObjectId("60670f0f23014e45f86269f7"),
+        "default": false,
+        "key": "ACT_INDEX",
+        "order": 32
+    },
+    {
+        "_id": ObjectId("60670f0f87649f8d87719561"),
+        "default": false,
+        "key": "HEMOGLOBINE_A1C",
+        "order": 33
+    },
+    {
+        "_id": ObjectId("60670f0f3f98ee28489ab13f"),
+        "default": false,
+        "key": "CHOLESTEROL_HDL",
+        "order": 34
+    },
+    {
+        "_id": ObjectId("60670f0f718d7aed76667ea5"),
+        "default": false,
+        "key": "CHOLESTEROL_LDL",
+        "order": 35
+    },
+    {
+        "_id": ObjectId("60670f0fd0ddf6a866afaea9"),
+        "default": false,
+        "key": "TRIGLYCERIDE",
+        "order": 36
+    },
+    {
+        "_id": ObjectId("60670f0fe205d24e25198b07"),
+        "default": false,
+        "key": "APO_B",
+        "order": 37
+    },
+    {
+        "_id": ObjectId("60670f0f249f67529e13ee01"),
+        "default": false,
+        "key": "CHOLESTEROL_RATIO",
+        "order": 38
+    },
+    {
+        "_id": ObjectId("60670f0f3490488233416d70"),
+        "default": false,
+        "key": "BLOODSUGAR_FASTING",
+        "order": 39
+    },
+    {
+        "_id": ObjectId("60670f0f09be4353603914ee"),
+        "default": false,
+        "key": "C_PEPTIDE_FASTING",
+        "order": 40
+    },
+    {
+        "_id": ObjectId("60670f0f0d453ed431bdeccd"),
+        "default": false,
+        "key": "BODY_FUNCTIONS",
+        "order": 41
+    },
+    {
+        "_id": ObjectId("60670f0fdcf6ddea23dba435"),
+        "default": false,
+        "key": "MENTAL_WELL_BEING",
+        "order": 42
+    },
+    {
+        "_id": ObjectId("60670f0f268ea442679ca8e6"),
+        "default": false,
+        "key": "EXISTENTIAL_MEANING",
+        "order": 43
+    },
+    {
+        "_id": ObjectId("60670f0f004906d33afeadea"),
+        "default": false,
+        "key": "QUALITY_OF_LIFE",
+        "order": 44
+    },
+    {
+        "_id": ObjectId("60670f0f460ccc71d6475866"),
+        "default": false,
+        "key": "PARTICIPATION",
+        "order": 45
+    },
+    {
+        "_id": ObjectId("60670f0f6f2ad94517118cbb"),
+        "default": false,
+        "key": "DAILY_FUNCTIONING",
+        "order": 46
+    }
+]

@@ -1,0 +1,109 @@
+body {
+  background: bisque;
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  font-family: "SkolaSans-regular", "Tangerine", "Times New Roman", Times, serif;
+}
+
+body {
+  background-color: antiquewhite ;
+}
+
+.cover {
+  width: 900px;
+  margin: 20px auto;
+  border: 2px solid black;
+}
+.header {
+  padding: 30px;
+}
+.header h2 {
+  background-color: coral;
+  width: 400px;
+  border: 2px solid orange;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 20px;
+}
+.ust_menu {
+  background-color: rosybrown;
+  height: 40px;
+}
+.ust_menu ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+.ust_menu ul li {
+  float: left;
+}
+.ust_menu ul li a {
+  display: block;
+  height: 40px;
+  width: 150px;
+  text-align: center;
+  line-height: 40px;
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+}
+.ust_menu ul li a:hover {
+  color: crimson;
+}
+.icerik {
+  height: 500px;
+}
+.search {
+  height: 40px;
+  line-height: 40px;
+  float: right;
+  margin-right: 10px;
+}
+.search button {
+  width: 60px;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+}
+.left_side {
+  width: 600px;
+  line-height: 30px;
+  text-align: justify;
+  float: left;
+}
+.left_side h2 {
+  width: 600px;
+  border-bottom: 2px dashed black;
+  padding-left: 20px;
+}
+.left_side img {
+  height: 300px;
+  width: 300px;
+  float: left;
+}
+.right_side {
+  width: 270;
+  margin-left: 30px;
+  float: left;
+}
+.right_side h3 {
+  background-color: darkred;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.right_side ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+.right_side ul li {
+  height: 50px;
+  background-color: darkred;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid black;
+}
