@@ -47,13 +47,11 @@ namespace EmployeeManagerMvc.Models
         [Column("Country")]
         [Display(Name = "Country")]
         [Required(ErrorMessage = "Country is requird")]
-        [StringLength(20, ErrorMessage = "Country must be less that 10 characters")]
         public string Country { get; set; }
 
         [Column("Notes")]
         [Display(Name = "Notes")]
         [Required(ErrorMessage = "Notes is requird")]
-        [StringLength(20, ErrorMessage = "Notes must be less that 10 characters")]
         public string Notes { get; set; }
 
     }
