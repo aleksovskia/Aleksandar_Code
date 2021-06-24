@@ -10,7 +10,7 @@ namespace EmployeeManagerMvc
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext([NotNullAttribute] DbContextOptions options): base(options)
+        public AppDbContext( DbContextOptions<AppDbContext> options): base(options)
         {
         }
 

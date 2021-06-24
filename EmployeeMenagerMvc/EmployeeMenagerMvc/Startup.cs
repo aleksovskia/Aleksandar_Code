@@ -44,10 +44,12 @@ namespace EmployeeManagerMvc
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseAuthorization();
-            app.UseAuthentication();
             app.UseStaticFiles();
             app.UseRouting();
+
+            app.UseAuthorization();
+            app.UseAuthentication();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
