@@ -1,0 +1,97 @@
+### GIT BASH Console  
+
+  #  Pri prvoto logiranje na GIT BASH Console treba da se povrzeme
+     so nasiot profil na gitHub.com so slednata komanda ->
+
+1.   git config --global user.name aleksovskia
+2.   git config --global user.email aleksovski0006@gmail.com
+
+1.   git config --global user.email "aleksovski0006@gmail.com"
+2.   git config --global user.name "aleksovskia"
+     
+   > ke ni strigne mail za da go odobrime "confirm" 
+     stledno ->
+     
+  # Prvo treba da imame napraveno Repository na github.com   ___   (primer: Imeto na naseto GIT repository e Html)   
+    potoa se pravi nov folder na desktop (primer: MyGitRepository)
+    Sledno -> 
+
+   > vleguvame vo folderot (MyGitRepository) so slednava komanda ->
+
+* GIT HUB Initializing
+
+   - git status
+1.   cd "C:\Users\x\Desktop\MyGitRepository"   ----(likacijata na folderot na Desktop)
+2.   git init
+3.   git remote add origin https://github.com/aleksovskia/Html.git   ----(linkot od repository na gitHub.com)
+4.   git remote -v
+
+* GIT PULL
+
+5.   git pull origin master --allow-unrelated-histories
+
+* GIT CLONE
+
+6.   git clone https://github.com/aleksovskia/Html.git    ----(linkot od repository na gitHub.com) 
+
+  - tuka ke se dodade celo repositori i avtomacki ke se napravi nov folder vo folderot (MyGitRepository) so imeto na repoto (Html),
+    i ke treba da se dodade vnatre vo folderot (Html) koj folder(code) sakame da go dodademe vo repoto kako na primer (html-css),
+    i sledno vleguvame vo folderot (MyGitRepository\Html) 
+    so slednava komanda ->
+  
+* GIT PUSH
+   
+7.   cd "C:\Users\x\Desktop\MyGitRepository\Html"   ----(lokacijata na kloniranoto repository)
+8.   git add --all
+9.   git commit -m "AddNewFiles"
+10.  git push origin main  
+   - git status
+
+
+ # git push origin main se pisuva ako e main e vo naseto repository napraveno,
+   ako e master se pisuva git push origin master 
+
+ - Ako sakame da IZBRISEME nesto od repoto go otvarame folderot na Desktop na repoto (MyGitRepository\Html)
+   go biriseme folderot sto sakame i povtorno pravime git push.
+  
+_________________________________________________________________________________________________________
+
+   ★> pri sekoe naredno pravenje PUSH samo vnesuvame ->★
+   
+  * GIT PUSH 
+
+1.  cd "C:\Users\x\Desktop\MyGitRepository\Html"   ----(lokacijata na kloniranoto repository)
+2.  git add --all
+3.  git commit -m "AddNewFiles"
+4.  git push  
+    
+    - Dokolku rabotime na isto repository so nekoj drug i toj napravil od kaj nego git push ,
+      treba prvo da napravine git pull pa potoa  git push . 
+
+   ★> pri sekoe naredno pravenje PULL samo vnesuvame ->★
+
+  * GIT PULL
+
+1.  cd "C:\Users\x\Desktop\MyGitRepository"   ----(likacijata na folderot na Desktop)
+2.  git pull
+
+  ★> dokolku sakame da go klonirame na drugo mesto vo nov folder samo vnesuvame ->★
+
+  * GIT CLONE
+ 
+1.   cd "C:\Users\x\Desktop\NewFolder"   ----(likacijata na noviot folder kade sto sakame da go klonirame repoto)
+2.   git clone https://github.com/aleksovskia/Html.git    ----(linkot od repository na gitHub.com)
+
+  _________________________________________
+  # OVA E ZA GIT BASH Console
+   > Vo git bash paste e  ->  Shift + insert
+
+  # https://gitforwindows.org/   ----(link za GIT BASH Console Downloads)
+   
+  # Getting Started - First Time Git Setup
+    https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+ 
+
+   25.03.2021
+
+
