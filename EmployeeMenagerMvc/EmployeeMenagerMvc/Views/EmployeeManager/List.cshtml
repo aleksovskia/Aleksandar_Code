@@ -13,7 +13,7 @@
         <th>Last Name</th>
         <th>Title</th>
         <th>Country</th>
-        <th>Notes</th>
+        @*<th>Notes</th>*@
         <th colspan="2">Actions</th>
     </tr>
     @foreach (var item in Model)
@@ -24,19 +24,21 @@
             <td>@item.LastName</td>
             <td>@item.Title</td>
             <td>@item.Country</td>
-            <td>@item.Notes</td>
+            @*<td>@item.Notes</td>*@
             <td>
                 <a asp-controller="EmployeeManager"
                    asp-action="Update"
                    asp-route-id="@item.EmployeeID"
-                   class="linkbutton">Update
+                   class="linkbutton">
+                    Update
                 </a>
             </td>
             <td>
                 <a asp-controller="EmployeeManager"
                    asp-action="Delete"
                    asp-route-id="@item.EmployeeID"
-                   class="linkbutton">Delete
+                   class="linkbutton">
+                    Delete
                 </a>
             </td>
         </tr>

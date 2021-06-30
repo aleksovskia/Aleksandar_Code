@@ -14,8 +14,17 @@
     <h1>Employee Manager</h1>
     <hr />
     <div>
-        @RenderBody();
+        @RenderBody()
     </div>
     <hr />
+    <hr />
+    @if (User.Identity.IsAuthenticated)
+    {
+        <h2>You are signed in as @User.Identity.Name</h2>
+        <form asp-controller="Security" asp-action="SignOut" method="post">
+            <button type="submit">Sign Out</button>
+        </form>
+    }
+
 </body>
 </html>

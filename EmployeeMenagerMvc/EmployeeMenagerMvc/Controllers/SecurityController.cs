@@ -27,6 +27,7 @@ namespace EmployeeManagerMvc.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Register(Register obj)
         {
             if (ModelState.IsValid)
@@ -64,6 +65,7 @@ namespace EmployeeManagerMvc.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult SignIn(SignIn obj)
         {
             if (ModelState.IsValid)
@@ -86,7 +88,8 @@ namespace EmployeeManagerMvc.Controllers
         [HttpPost]
         public IActionResult SignOut()
         {
-            return View();
+            signinManager.SignOutAsync().Wait();
+            return RedirectToAction("SignIn", "Security");
         }
     }
 }

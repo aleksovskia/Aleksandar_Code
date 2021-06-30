@@ -7,21 +7,17 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 using EmployeeManagerMvc.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EmployeeManagerMvc.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class EmployeeManagerController : Controller
     {
         private AppDbContext db = null;
         public EmployeeManagerController(AppDbContext db)
         {
             this.db = db;
-        }
-    
-
-        public IActionResult Index()
-        {
-            return View();
         }
 
         public IActionResult List()
@@ -31,7 +27,6 @@ namespace EmployeeManagerMvc.Controllers
                                     select e).ToList();
             return View(model);
         }
-
         private void FillCountries()
         {
             List<SelectListItem> countries =
@@ -44,14 +39,14 @@ namespace EmployeeManagerMvc.Controllers
                  }).ToList();
             ViewBag.Countries = countries;
         }
-
         public IActionResult Insert()
         {
             FillCountries();
             return View();
         }
-
         [HttpPost]
+        [Authorize(Roles = "Manager")]
+        [ValidateAntiForgeryToken]
         public IActionResult Insert (Employee model)
         {
             FillCountries();
@@ -63,7 +58,6 @@ namespace EmployeeManagerMvc.Controllers
             }
             return View(model);
         }
-
         public IActionResult Update(int id)
         {
             FillCountries();
@@ -71,6 +65,8 @@ namespace EmployeeManagerMvc.Controllers
             return View(model);    
         }
         [HttpPost]
+        [Authorize(Roles = "Manager")]
+        [ValidateAntiForgeryToken]
         public IActionResult Update (Employee model)
         {
             FillCountries();
@@ -90,6 +86,8 @@ namespace EmployeeManagerMvc.Controllers
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles = "Manager")]
+        [ValidateAntiForgeryToken]
         public IActionResult Delete (int employeeID)
         {
             Employee model = db.Employees.Find(employeeID);
@@ -97,6 +95,6 @@ namespace EmployeeManagerMvc.Controllers
             db.SaveChanges();
             TempData["Message"] = "Employee deleted successfully";
             return RedirectToAction("List"); 
-        }
+        }     
     }
 }

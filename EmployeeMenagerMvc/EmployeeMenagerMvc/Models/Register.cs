@@ -18,7 +18,7 @@ namespace EmployeeManagerMvc.Models
       
         [Required]
         [Compare("Password")]
-        [Display(Name = "User Name")]
+        [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
 
         [Required]
