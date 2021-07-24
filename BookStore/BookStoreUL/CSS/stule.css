@@ -1,0 +1,16 @@
+body{
+    background-color: grey;
+}
+.top-categories{
+    background-color: lightgray;
+    padding: 10vh 2vw;
+    text-align: center;
+}#top-books{
+    padding: 4vh 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#top-books img{
+    height: 200px;
+}
