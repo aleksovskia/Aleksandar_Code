@@ -23,6 +23,32 @@ namespace Calculator
             VtorBroj = Convert.ToInt32(Console.ReadLine());
 
 
+
+            if (PrvBorj >= 100)
+            {
+                throw new EmployeeNotFoundException();
+               
+            }
+            Console.WriteLine("nevaliden vnes");
+            try
+            {
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fativ exception");
+                Console.WriteLine("Porakata na exception e" + e.Message);
+                if (e is EmployeeNotFoundException)
+                {
+                    //nekoja logika dokolku fativ konkreten tip na exception
+                    Console.WriteLine("Fativ employee not found exception");
+                }
+
+            }
+            Console.WriteLine("Zavrisiv so izvrsuvanje na programata");
+
+
+
             if (operacija == '+')
             {
                 Rezultat = PrvBorj + VtorBroj;
@@ -60,5 +86,12 @@ namespace Calculator
 
         }
 
+        public class EmployeeNotFoundException : Exception
+        {
+            public EmployeeNotFoundException()
+                : base("Employee not found.")
+            {
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace Zadaci
         public int Oddalecenost { get; set; }
         public int ProbajException()
         {
-            var broj = 2;
+            var broj = 1;
             // nekoja logika tuka
             if (broj == 1) // ako uslovot ne e ispolnet, frli exception
             {

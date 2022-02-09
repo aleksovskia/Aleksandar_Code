@@ -46,7 +46,8 @@ namespace WebApi_Aleksandar_Aleksovski.Services
         }
         public List<NatoinalTeam> Get()
         {
-            return db.NatoinalTeam.Include(c => c.Drzava).Include(b => b.MegunarodniNastapi).ToList();
+            // return db.NatoinalTeam.Include(c => c.Drzava).Include(b => b.MegunarodniNastapi).ToList();
+            return db.NatoinalTeam.ToList();
         }
         public NatoinalTeam Get(int id)
         {
