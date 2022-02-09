@@ -1,14 +1,18 @@
 
 # AAF Web Shop
 
+
 ## Table of Contents
 
 
 - [Git Commands](#Git-Commadns)
 - [Configuration appsettings.json](#configuration-appsettings.json)
 - [How to open the project](#How-to-open-the-project)
+- [test](#test)
+
 #
 ### Git Commands
+
 
 #### `git init` turn a directory into empty git repository
 #### `git clone "link for the git repositori"` -  is a command for downloading existing source code from repository
@@ -57,8 +61,4 @@
 #### `Swashbuckle.AspNetCore`
 
 
-
-
-
-
-
+### test 
